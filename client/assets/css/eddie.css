@@ -1,0 +1,217 @@
+/* NGANIMATE
+====================== */
+
+/* show and hide */
+.show-hide-message.ng-hide-remove {
+	-webkit-animation:zoomIn 0.3s both ease;
+	-moz-animation:zoomIn 0.3s both ease;
+	animation:zoomIn 0.3s both ease;
+}
+
+/* ANIMATIONS
+====================== */
+.spinner {
+	-webkit-animation:spin 1s infinite;
+	-moz-animation:spin 1s infinite;
+	animation:spin 1s infinite;
+}
+
+@keyframes spin {
+	from 	{ transform:rotate(0deg); }
+	to 	{ transform:rotate(360deg); }
+}
+
+@-webkit-keyframes spin {
+	from 	{ -webkit-transform:rotate(0deg); }
+	to 	{ -webkit-transform:rotate(360deg); }
+}
+
+@-moz-keyframes spin {
+	from 	{ -moz-transform:rotate(0deg); }
+	to 	{ -moz-transform:rotate(360deg); }
+}
+
+
+.app-page {
+  padding-top: 90px;
+}
+
+/* borderless table */
+.table.table-borderless td, .table.table-borderless th {
+    border: 0 !important;
+    /*border-bottom: 1px solid #f0f4f7;*/
+}
+
+.table.table-borderless {
+    margin-bottom: 0px;
+    border: 0 !important;
+    /*border-bottom: 1px solid #f0f4f7;*/
+}
+
+.panel-menu {
+    margin-bottom: 20%;
+    margin-top: 20%;
+}
+
+
+.login-panel {
+    margin-bottom: 8%;
+    margin-top: 9%;
+}
+
+.search-form {
+    margin-bottom: 16%;
+    margin-top: 12%;
+}
+
+.center_it {
+   display: inline-block;
+}
+
+/*
+Extra small devices (portrait phones, less than 544px)
+No media query since this is the default in Bootstrap because it is "mobile first"
+*/
+h1 {font-size:2.2rem;} /*1rem = 16px*/
+/*
+####################################################
+M E D I A  Q U E R I E S
+####################################################
+*/
+
+/*
+::::::::::::::::::::::::::::::::::::::::::::::::::::
+Bootstrap 4 breakpoints
+*/
+/* Small devices (landscape phones, 544px and up) */
+@media (min-width: 544px) {
+  h1 {font-size:3.7rem;} /*1rem = 16px*/
+}
+
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media (min-width: 768px) {
+  h1 {font-size:4rem;} /*1rem = 16px*/
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  h1 {font-size:5rem;} /*1rem = 16px*/
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  h1 {font-size:6rem;} /*1rem = 16px*/
+}
+
+.bg-black {
+    background-color: rgb(0, 0, 0);
+}
+
+.bg-pink {
+    background-color: #E91E63;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+.wrap {
+  min-height: 86%;
+}
+
+/*
+.footer {
+  position: relative;
+  margin-top: -180px;
+  height: 180px;
+  clear: both;
+}*/
+
+/* Opera Fix thanks to Maleika (Kohoutec) */
+body:before {
+  content: "";
+  height: 100%;
+  float: left;
+  width: 0;
+  margin-top: -32767px;/* thank you Erik J - negate effect of float*/
+}
+
+.panel-fixed {
+  max-height: 180px;
+  overflow-y: scroll;
+}
+
+.panel-fixed-2 {
+  max-height: 400px;
+  overflow-y: scroll;
+}
+
+/* Pill size changed from 100px to 85px*/
+.nav-pills > li > a {
+  line-height: 24px;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 500;
+  min-width: 80px;
+  text-align: center;
+  color: #555555;
+  transition: all .3s;
+}
+
+/* Responsive Pills for mobiles*/
+.nav-pills-mobile > li > a {
+  line-height: 24px;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 500;
+  min-width: 50px;
+  text-align: center;
+  color: #555555;
+  transition: all .3s;
+}
+
+.nav-pills-mobile > li > a:hover {
+  background-color: rgba(200, 200, 200, 0.2);
+}
+.nav-pills-mobile > li i {
+  display: block;
+  font-size: 30px;
+  padding: 15px 0;
+}
+.nav-pills-mobile > li.active > a, .nav-pills-mobile > li.active > a:focus, .nav-pills-mobile > li.active > a:hover {
+  background-color: #9c27b0;
+  color: #FFFFFF;
+  box-shadow: 0 16px 26px -10px rgba(156, 39, 176, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(156, 39, 176, 0.2);
+}
+.nav-pills-mobile.nav-pills-mobile-info > li.active > a, .nav-pills-mobile.nav-pills-mobile-info > li.active > a:focus, .nav-pills-mobile.nav-pills-mobile-info > li.active > a:hover {
+  background-color: #03a9f4;
+  box-shadow: 0 16px 26px -10px rgba(3, 169, 244, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(3, 169, 244, 0.2);
+}
+.nav-pills-mobile.nav-pills-mobile-success > li.active > a, .nav-pills-mobile.nav-pills-mobile-success > li.active > a:focus, .nav-pills-mobile.nav-pills-mobile-success > li.active > a:hover {
+  background-color: #4caf50;
+  box-shadow: 0 16px 26px -10px rgba(76, 175, 80, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(76, 175, 80, 0.2);
+}
+.nav-pills-mobile.nav-pills-mobile-warning > li.active > a, .nav-pills-mobile.nav-pills-mobile-warning > li.active > a:focus, .nav-pills-mobile.nav-pills-mobile-warning > li.active > a:hover {
+  background-color: #fbc02d;
+  box-shadow: 0 16px 26px -10px rgba(251, 192, 45, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(251, 192, 45, 0.2);
+}
+.nav-pills-mobile.nav-pills-mobile-danger > li.active > a, .nav-pills-mobile.nav-pills-mobile-danger > li.active > a:focus, .nav-pills-mobile.nav-pills-mobile-danger > li.active > a:hover {
+  background-color: #f44336;
+  box-shadow: 0 16px 26px -10px rgba(244, 67, 54, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(244, 67, 54, 0.2);
+}
+
+ul.nav-pills-mobile { display: none }
+@media only screen and (max-width: 640px) {
+    ul.nav-pills-mobile { display: block }
+    ul.nav-pills { display: none }
+}
+
+/*Make labels look like badges*/
+.label-as-badge {
+    border-radius: 1em;
+}

@@ -19,14 +19,24 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "../node_modules/bootstrap/dist/css/bootstrap.min.css",
-        "../node_modules/font-awesome/css/font-awesome.min.css",
+        "../client/assets/css/bootstrap.min.css",
+        "../client/assets/css/material-kit.css",
+        "../client/assets/css/animate.css",
+        "../client/assets/css/eddie.css",
+        "../client/assets/css/normalize.css",
+        "../client/assets/css/ion.rangeSlider.css",
+        "../client/assets/css/ion.rangeSlider.skinFlat.css",
         "styles.scss"
       ],
       "scripts": [
-        "../node_modules/jquery/dist/jquery.min.js",
-        "../node_modules/tether/dist/js/tether.min.js",
-        "../node_modules/bootstrap/dist/js/bootstrap.min.js"
+        "../client/assets/js/ali.js",
+        "../client/assets/js/jquery.min.js",
+        "../client/assets/js/bootstrap.min.js",
+        "../client/assets/js/material.min.js",
+        "../client/assets/js/bootstrap-datepicker.js",
+        "../client/assets/js/material-kit.js",
+        "../client/assets/js/ion.rangeSlider.js",
+        "../client/assets/js/radarChart.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

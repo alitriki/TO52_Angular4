@@ -10,6 +10,14 @@ abstract class BaseCtrl {
     });
   }
 
+  // Get list by id in
+  getIn = (req, res) => {
+    this.model.find({ _id: { $in: req.params.ids }  }, (err, obj) => {
+      if (err) { return console.error(err); }
+      res.json(obj);
+    });
+  }
+
   // Count all
   count = (req, res) => {
     this.model.count((err, count) => {

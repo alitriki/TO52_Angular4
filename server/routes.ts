@@ -1,13 +1,19 @@
 import * as express from 'express';
 
 import CatCtrl from './controllers/cat';
+import EntrepriseCtrl from './controllers/entreprise';
+import SiteCtrl from './controllers/site';
 import UserCtrl from './controllers/user';
 import Cat from './models/cat';
+import Entreprise from './models/entreprise';
+import Site from './models/site';
 import User from './models/user';
 
 export default function setRoutes(app) {
 
   const catCtrl = new CatCtrl();
+  const entrepriseCtrl = new EntrepriseCtrl();
+  const siteCtrl = new SiteCtrl();
   const userCtrl = new UserCtrl();
 
   // Cats
@@ -27,4 +33,14 @@ export default function setRoutes(app) {
   app.route('/api/user/:id').put(userCtrl.update);
   app.route('/api/user/:id').delete(userCtrl.delete);
 
+  // Entreprises
+  app.route('/api/entreprises').get(entrepriseCtrl.getAll);
+  app.route('/api/entreprises/count').get(entrepriseCtrl.count);
+  app.route('/api/entreprises').post(entrepriseCtrl.insert);
+  app.route('/api/entreprises/:id').get(entrepriseCtrl.get);
+  app.route('/api/entreprises/:id').put(entrepriseCtrl.update);
+  app.route('/api/entreprises/:id').delete(entrepriseCtrl.delete);
+
+  app.route('/api/entreprise/:id').get(entrepriseCtrl.get);
+  app.route('/api/site/:ids').get(siteCtrl.get);
 }
