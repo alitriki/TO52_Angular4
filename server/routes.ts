@@ -42,5 +42,6 @@ export default function setRoutes(app) {
   app.route('/api/entreprises/:id').delete(entrepriseCtrl.delete);
 
   app.route('/api/entreprise/:id').get(entrepriseCtrl.get);
+  app.route('/api/domaines').get(entrepriseCtrl.getDomaines);
   app.route('/api/site/:ids').get(siteCtrl.get);
 }

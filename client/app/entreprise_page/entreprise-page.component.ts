@@ -6,7 +6,7 @@ import { ActivatedRoute } from '@angular/router';
 import { EntrepriseService } from '../services/entreprise.service';
 import { SiteService } from '../services/site.service';
 import { ToastComponent } from '../shared/toast/toast.component';
-
+import { Enterprise} from '../models/entreprise';
 
 @Component({
   selector: 'app-entreprise',
@@ -17,7 +17,7 @@ import { ToastComponent } from '../shared/toast/toast.component';
 export class EntreprisePageComponent implements OnInit {
 
 
-  entreprise = {};
+  entreprise : Enterprise = {};
   sites = [];
   // site = {};
   // siteId: String;
@@ -33,20 +33,22 @@ export class EntreprisePageComponent implements OnInit {
 
   ngOnInit() {
     this.getEntrepriseById(this.id);
-    console.log(this.entreprise);
+    // console.log(this.entreprise.nom);
   }
 
   getEntrepriseById(id) {
     this.entrepriseService.getEntreprise(id).subscribe(
-      data => this.entreprise = data,
+      data => {this.entreprise = data;
+      console.log(data.nom);
+    },
       error => console.log(error)
     );
   }
 
-  getSitesIn(ids) {
-    this.siteService.getSitesIn(ids).subscribe(
-      data => this.sites = data,
-      error => console.log(error)
-    );
-  }
+  // getSitesIn(ids) {
+  //   this.siteService.getSitesIn(ids).subscribe(
+  //     data => this.sites = data,
+  //     error => console.log(error)
+  //   );
+  // }
 }

@@ -15,6 +15,9 @@ export class EntrepriseService {
   getEntreprises(): Observable<any> {
     return this.http.get('/api/entreprises').map(res => res.json());
   }
+  getDomaines(): Observable<any> {
+    return this.http.get('/api/domaines').map(res => res.json());
+  }
 
   countEntreprises(): Observable<any> {
     return this.http.get('/api/entreprises/count').map(res => res.json());

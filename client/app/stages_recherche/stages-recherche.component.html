@@ -3,11 +3,15 @@
 </div>
 <div class="col-xs-12 search-form">
 
-  <form class="form-inline" method="post">
+  <form class="" method="post">
     <div class="col-sm-3 col-xs-12">
-      <div class="form-group label-floating">
+      <div class="form-group label-floating" id="domaineLabel">
         <label class="control-label">Domaine d'activité</label>
-        <input type="text" class="form-control">
+        <input type="text" class="form-control" id="domaineInput" onclick="displaySelect('domaine');">
+        <select class="form-control" id="domaineSelect" style="display: none" >
+          <option *ngFor="let domaine of domaines">{{domaine}}</option>
+        </select>
+
       </div>
 
     </div>
@@ -17,10 +21,16 @@
         <input type="text" class="form-control">
       </div>
     </div>
+
     <div class="col-sm-3 col-xs-12">
-      <div class="form-group label-floating">
-        <label class="control-label">Type de stage</label>
-        <input type="text" class="form-control">
+      <div class="form-group label-floating" id="typeLabel">
+        <label class="control-label" id="typeLable">Type de stage</label>
+        <input type="text" class="form-control" id="typeInput" onclick="displaySelect('type');">
+        <select class="form-control" id="typeSelect" style="display: none">
+          <option>ST20</option>
+          <option>ST40</option>
+          <option>ST50</option>
+        </select>
       </div>
     </div>
     <div class="col-sm-3 col-xs-12">
