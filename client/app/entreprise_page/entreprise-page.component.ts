@@ -7,6 +7,7 @@ import { EntrepriseService } from '../services/entreprise.service';
 import { SiteService } from '../services/site.service';
 import { ToastComponent } from '../shared/toast/toast.component';
 import { Enterprise} from '../models/entreprise';
+import { Site } from '../models/site';
 
 @Component({
   selector: 'app-entreprise',
@@ -18,10 +19,8 @@ export class EntreprisePageComponent implements OnInit {
 
 
   entreprise : Enterprise = {};
-  sites = [];
-  // site = {};
-  // siteId: String;
-  // siteIds: [String];
+  sites : Site[];
+  contactId = 0;
   id: String;
 
   constructor(private entrepriseService: EntrepriseService,
@@ -38,11 +37,14 @@ export class EntreprisePageComponent implements OnInit {
 
   getEntrepriseById(id) {
     this.entrepriseService.getEntreprise(id).subscribe(
-      data => {this.entreprise = data;
-      console.log(data.nom);
-    },
+      data => this.entreprise = data,
       error => console.log(error)
     );
+  }
+
+  //not working
+  showContacts(contact: number){
+    this.contactId=contact;
   }
 
   // getSitesIn(ids) {

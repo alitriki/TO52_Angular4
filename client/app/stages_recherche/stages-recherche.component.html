@@ -8,7 +8,7 @@
       <div class="form-group label-floating" id="domaineLabel">
         <label class="control-label">Domaine d'activité</label>
         <input type="text" class="form-control" id="domaineInput" onclick="displaySelect('domaine');">
-        <select class="form-control" id="domaineSelect" style="display: none" >
+        <select class="form-control" id="domaineSelect" style="display: none" [(ngModel)]="criteres.domaine" name="domaine">
           <option *ngFor="let domaine of domaines">{{domaine}}</option>
         </select>
 
@@ -18,7 +18,7 @@
     <div class="col-sm-3 col-xs-12">
       <div class="form-group label-floating">
         <label class="control-label">Ville, Région, Pays</label>
-        <input type="text" class="form-control">
+        <input type="text" class="form-control" [(ngModel)]="criteres.lieu" name="lieu">
       </div>
     </div>
 
@@ -26,7 +26,7 @@
       <div class="form-group label-floating" id="typeLabel">
         <label class="control-label" id="typeLable">Type de stage</label>
         <input type="text" class="form-control" id="typeInput" onclick="displaySelect('type');">
-        <select class="form-control" id="typeSelect" style="display: none">
+        <select class="form-control" id="typeSelect" style="display: none" [(ngModel)]="criteres.type" name="type">
           <option>ST20</option>
           <option>ST40</option>
           <option>ST50</option>
@@ -34,7 +34,7 @@
       </div>
     </div>
     <div class="col-sm-3 col-xs-12">
-      <button class="btn btn-lg btn-block btn-primary" type="submit" name="search">
+      <button class="btn btn-lg btn-block btn-primary" name="search" (click)="rechercheParCriteres()">
         <i class="material-icons">search</i>Go !
       </button>
     </div>
