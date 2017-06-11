@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
   login() {
     this.auth.login(this.loginForm.value).subscribe(
       res => this.router.navigate(['/acceuil']),
-      error => this.toast.setMessage('invalid email or password!', 'danger')
+      error => this.toast.setMessage('Email ou mot de passe invalides!', 'danger')
     );
   }
 

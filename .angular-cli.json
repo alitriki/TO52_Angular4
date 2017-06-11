@@ -19,10 +19,10 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
+        "../client/assets/css/eddie.css",
         "../client/assets/css/bootstrap.min.css",
         "../client/assets/css/material-kit.css",
         "../client/assets/css/animate.css",
-        "../client/assets/css/eddie.css",
         "../client/assets/css/normalize.css",
         "../client/assets/css/ion.rangeSlider.css",
         "../client/assets/css/ion.rangeSlider.skinFlat.css",

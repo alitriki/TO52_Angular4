@@ -20,7 +20,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 
 const routes: Routes = [
-  { path: '', component: AcceuilComponent },
+  { path: '', component: AcceuilComponent, canActivate: [AuthGuardLogin] },
   { path: 'cats', component: CatsComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },

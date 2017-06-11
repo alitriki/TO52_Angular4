@@ -12,17 +12,12 @@ import { ToastComponent } from '../shared/toast/toast.component';
 export class RegisterComponent implements OnInit {
 
   registerForm: FormGroup;
-  username = new FormControl('', [Validators.required,
-                                  Validators.minLength(2),
-                                  Validators.maxLength(30),
-                                  Validators.pattern('[a-zA-Z0-9_-\\s]*')]);
   email = new FormControl('', [Validators.required,
                                Validators.minLength(3),
+                               Validators.pattern(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@utbm\.fr$/),
                                Validators.maxLength(100)]);
   password = new FormControl('', [Validators.required,
                                   Validators.minLength(6)]);
-
-  role = new FormControl('', [Validators.required]);
 
   constructor(private formBuilder: FormBuilder,
               private router: Router,
@@ -31,16 +26,12 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
-      username: this.username,
       email: this.email,
       password: this.password,
-      role: this.role
+      role: 'etudiant'
     });
   }
 
-  setClassUsername() {
-    return { 'has-danger': !this.username.pristine && !this.username.valid };
-  }
   setClassEmail() {
     return { 'has-danger': !this.email.pristine && !this.email.valid };
   }
@@ -51,10 +42,10 @@ export class RegisterComponent implements OnInit {
   register() {
     this.userService.register(this.registerForm.value).subscribe(
       res => {
-        this.toast.setMessage('you successfully registered!', 'success');
+        this.toast.setMessage('Enregistrement effectué avec succès !', 'success');
         this.router.navigate(['/login']);
       },
-      error => this.toast.setMessage('email already exists', 'danger')
+      error => this.toast.setMessage('Cette adresse mail est déjà utilisée', 'danger')
     );
   }
 }

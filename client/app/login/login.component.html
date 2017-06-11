@@ -1,18 +1,49 @@
-<app-toast [message]="toast.message"></app-toast>
+<!-- Login -->
 
-<div class="card">
-  <h4 class="card-header">Login</h4>
-  <div class="card-block">
-    <form [formGroup]="loginForm" (ngSubmit)="login()">
-      <div class="input-group" [ngClass]="setClassEmail()">
-        <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-        <input class="form-control" type="email" name="email" formControlName="email" placeholder="Email" autofocus>
+
+<div class="login-panel col-xs-12">
+  <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 ">
+    <!-- signup-card -->
+    <div class="card card-signup">
+
+      <div class="header header-primary text-center">
+        <h4>Connexion</h4>
       </div>
-      <div class="input-group" [ngClass]="setClassPassword()">
-        <span class="input-group-addon"><i class="fa fa-key"></i></span>
-        <input class="form-control" type="password" name="password" formControlName="password" placeholder="Password">
+      <div class="card-body">
+
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+          <div class="col-xs-12">
+            <div class="col-xs-12">
+              <div class="input-group" [ngClass]="setClassEmail()">
+                <span class="input-group-addon">
+                    <i class="material-icons">face</i>
+                  </span>
+                <input class="form-control" type="email" name="email" required="required" formControlName="email" placeholder="Email" autofocus>
+              </div>
+            </div>
+            <div class="col-xs-12">
+              <div class="input-group" [ngClass]="setClassPassword()">
+                <span class="input-group-addon">
+                    <i class="material-icons">lock_outline</i>
+                  </span>
+                <input class="form-control" type="password" name="password" required="required" formControlName="password" placeholder="Mot de passe">
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12">
+            <app-toast [message]="toast.message"></app-toast>
+          </div>
+          <div class="col-xs-6">
+            <button class="btn btn-sm btn-primary pull-left" type="submit" name="login">Connexion</button>
+          </div>
+          <div class="col-xs-6">
+            <button class="btn btn-sm btn-default pull-right" type="button" name="signup">Créer un compte</button>
+          </div>
+        </form>
+
       </div>
-      <button class="btn btn-primary" type="submit" [disabled]="!loginForm.valid"><i class="fa fa-sign-in"></i> Login</button>
-    </form>
+    </div>
+    <!-- signup-card-end -->
   </div>
 </div>
+<!-- Login-end -->

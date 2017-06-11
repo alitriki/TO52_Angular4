@@ -1,3 +1,4 @@
+
 /* NGANIMATE
 ====================== */
 
@@ -53,6 +54,10 @@
     margin-top: 20%;
 }
 
+.user-update-panel {
+    margin-bottom: 9%;
+    margin-top: 4%;
+}
 
 .login-panel {
     margin-bottom: 8%;
@@ -149,69 +154,4 @@ body:before {
 .panel-fixed-2 {
   max-height: 400px;
   overflow-y: scroll;
-}
-
-/* Pill size changed from 100px to 85px*/
-.nav-pills > li > a {
-  line-height: 24px;
-  text-transform: uppercase;
-  font-size: 12px;
-  font-weight: 500;
-  min-width: 80px;
-  text-align: center;
-  color: #555555;
-  transition: all .3s;
-}
-
-/* Responsive Pills for mobiles*/
-.nav-pills-mobile > li > a {
-  line-height: 24px;
-  text-transform: uppercase;
-  font-size: 12px;
-  font-weight: 500;
-  min-width: 50px;
-  text-align: center;
-  color: #555555;
-  transition: all .3s;
-}
-
-.nav-pills-mobile > li > a:hover {
-  background-color: rgba(200, 200, 200, 0.2);
-}
-.nav-pills-mobile > li i {
-  display: block;
-  font-size: 30px;
-  padding: 15px 0;
-}
-.nav-pills-mobile > li.active > a, .nav-pills-mobile > li.active > a:focus, .nav-pills-mobile > li.active > a:hover {
-  background-color: #9c27b0;
-  color: #FFFFFF;
-  box-shadow: 0 16px 26px -10px rgba(156, 39, 176, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(156, 39, 176, 0.2);
-}
-.nav-pills-mobile.nav-pills-mobile-info > li.active > a, .nav-pills-mobile.nav-pills-mobile-info > li.active > a:focus, .nav-pills-mobile.nav-pills-mobile-info > li.active > a:hover {
-  background-color: #03a9f4;
-  box-shadow: 0 16px 26px -10px rgba(3, 169, 244, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(3, 169, 244, 0.2);
-}
-.nav-pills-mobile.nav-pills-mobile-success > li.active > a, .nav-pills-mobile.nav-pills-mobile-success > li.active > a:focus, .nav-pills-mobile.nav-pills-mobile-success > li.active > a:hover {
-  background-color: #4caf50;
-  box-shadow: 0 16px 26px -10px rgba(76, 175, 80, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(76, 175, 80, 0.2);
-}
-.nav-pills-mobile.nav-pills-mobile-warning > li.active > a, .nav-pills-mobile.nav-pills-mobile-warning > li.active > a:focus, .nav-pills-mobile.nav-pills-mobile-warning > li.active > a:hover {
-  background-color: #fbc02d;
-  box-shadow: 0 16px 26px -10px rgba(251, 192, 45, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(251, 192, 45, 0.2);
-}
-.nav-pills-mobile.nav-pills-mobile-danger > li.active > a, .nav-pills-mobile.nav-pills-mobile-danger > li.active > a:focus, .nav-pills-mobile.nav-pills-mobile-danger > li.active > a:hover {
-  background-color: #f44336;
-  box-shadow: 0 16px 26px -10px rgba(244, 67, 54, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(244, 67, 54, 0.2);
-}
-
-ul.nav-pills-mobile { display: none }
-@media only screen and (max-width: 640px) {
-    ul.nav-pills-mobile { display: block }
-    ul.nav-pills { display: none }
-}
-
-/*Make labels look like badges*/
-.label-as-badge {
-    border-radius: 1em;
 }
