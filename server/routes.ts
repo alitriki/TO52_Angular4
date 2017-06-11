@@ -43,4 +43,11 @@ export default function setRoutes(app) {
 
   app.route('/api/entreprise/:id').get(entrepriseCtrl.get);
   app.route('/api/site/:ids').get(siteCtrl.get);
+  app.route('/api/domaines').get(entrepriseCtrl.getDomaines);
+  app.route('/api/entreprisesUnCritere').get(entrepriseCtrl.getEntreprisesUnCritere);
+  app.route('/api/entreprisesUnCritere/:criteres').get(entrepriseCtrl.getEntreprisesUnCritere);
+  app.route('/api/entreprisesDeuxCriteres/:criteres').get(entrepriseCtrl.getEntreprisesDeuxCriteres);
+  app.route('/api/entreprisesTroisCriteres/:criteres').get(entrepriseCtrl.getEntreprisesTroisCriteres);
+
+
 }

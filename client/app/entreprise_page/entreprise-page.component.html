@@ -9,13 +9,10 @@
       <div class="panel-body">
         <div class="col-sm-6 col-xs-12 text-center">
           <div class="col-xs-12">
-            <img width="110" height="110" src="assets/img/logo-entreprise.png" alt="Circle Image" class="img-circle img-responsive center_it">
+            <img width="110" height="110" [src]="entreprise.logo" alt="Circle Image" class="img-circle img-responsive center_it">
           </div>
           <div class="col-xs-12 text-primary">
             <h3>{{entreprise.nom}}</h3>
-            <div *ngFor="let site of entreprise.sites">
-              {{site.site_id}}
-            </div>
             <label class="label label-info">{{entreprise.type}}</label>
           </div>
         </div>
@@ -54,12 +51,15 @@
       <div class="panel-heading">
         <h3 class="panel-title">Sites</h3>
       </div>
-      <div class="panel-body panel-fixed">
+      <div class="panel-body panel-fixed" >
         <!-- Sites -->
+        <div *ngFor="let site of entreprise.sites">
+
+
         <div class="panel panel-default">
           <div class="panel-heading">
             <h3 class="panel-title">
-              <span class="text-muted">Pays </span><span class="text-primary">Ville </span><span>Nom </span>
+              <span class="text-muted">{{site.pays}} </span><span class="text-primary">{{site.ville}} </span><span>{{site.nom}} </span>
               <span class="pull-right"><a href="#">Contacts</a></span>
             </h3>
           </div>
@@ -68,60 +68,17 @@
               <tbody>
                 <tr>
                   <td class="text-right" data-toggle="tooltip" data-placement="top" title="Adresse" data-container="body"><i class="material-icons">place</i></td>
-                  <td>Adresse</td>
+                  <td>{{site.adresse}}</td>
                 </tr>
                 <tr>
                   <td class="text-right" data-toggle="tooltip" data-placement="top" title="Numéro de téléphone" data-container="body"><i class="material-icons">call</i></td>
-                  <td>###########</td>
+                  <td>{{site.tel}}</td>
                 </tr>
               </tbody>
             </table>
           </div>
         </div>
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title">
-              <span class="text-muted">Pays </span><span class="text-primary">Ville </span><span>Nom </span>
-              <span class="pull-right"><a href="#">Contacts</a></span>
-            </h3>
-          </div>
-          <div class="panel-body text-primary">
-            <table class="table table-responsive table-hover table-borderless">
-              <tbody>
-                <tr>
-                  <td class="text-right" data-toggle="tooltip" data-placement="top" title="Adresse" data-container="body"><i class="material-icons">place</i></td>
-                  <td>Adresse</td>
-                </tr>
-                <tr>
-                  <td class="text-right" data-toggle="tooltip" data-placement="top" title="Numéro de téléphone" data-container="body"><i class="material-icons">call</i></td>
-                  <td>###########</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title">
-              <span class="text-muted">Pays </span><span class="text-primary">Ville </span><span>Nom </span>
-              <span class="pull-right"><a href="#">Contacts</a></span>
-            </h3>
-          </div>
-          <div class="panel-body text-primary">
-            <table class="table table-responsive table-hover table-borderless">
-              <tbody>
-                <tr>
-                  <td class="text-right" data-toggle="tooltip" data-placement="top" title="Adresse" data-container="body"><i class="material-icons">place</i></td>
-                  <td>Adresse</td>
-                </tr>
-                <tr>
-                  <td class="text-right" data-toggle="tooltip" data-placement="top" title="Numéro de téléphone" data-container="body"><i class="material-icons">call</i></td>
-                  <td>###########</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
+       </div>
         <!-- Sites-end -->
       </div>
       <div class="panel-footer">
@@ -136,13 +93,14 @@
       <div class="panel-heading">
         <h3 class="panel-title">Contacts</h3>
       </div>
-      <div class="panel-body panel-fixed">
+      <div class="panel-body panel-fixed" >
         <!-- Contacts -->
+        <div *ngFor="let contact of entreprise.sites[0].contacts">
         <div class="panel panel-default">
           <div class="panel-heading">
             <h3 class="panel-title">
-              <span>Prénom Nom</span>
-              <span class="text-primary pull-right">Poste</span>
+              <span>{{contact.nom}} {{contact.prenom}}</span>
+              <span class="text-primary pull-right">{{contact.poste}}</span>
             </h3>
           </div>
           <div class="panel-body text-primary">
@@ -150,60 +108,17 @@
               <tbody>
                 <tr>
                   <td class="text-right" data-toggle="tooltip" data-placement="top" title="Adresse mail" data-container="body"><i class="material-icons">contact_mail</i></td>
-                  <td>Adresse mail</td>
+                  <td>{{contact.email}}</td>
                 </tr>
                 <tr>
                   <td class="text-right" data-toggle="tooltip" data-placement="top" title="Numéro de téléphone" data-container="body"><i class="material-icons">contact_phone</i></td>
-                  <td>###########</td>
+                  <td>{{contact.tel}}</td>
                 </tr>
               </tbody>
             </table>
           </div>
         </div>
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title">
-              <span>Prénom Nom</span>
-              <span class="text-primary pull-right">Poste</span>
-            </h3>
-          </div>
-          <div class="panel-body text-primary">
-            <table class="table table-responsive table-hover table-borderless">
-              <tbody>
-                <tr>
-                  <td class="text-right" data-toggle="tooltip" data-placement="top" title="Adresse mail" data-container="body"><i class="material-icons">contact_mail</i></td>
-                  <td>Adresse mail</td>
-                </tr>
-                <tr>
-                  <td class="text-right" data-toggle="tooltip" data-placement="top" title="Numéro de téléphone" data-container="body"><i class="material-icons">contact_phone</i></td>
-                  <td>###########</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title">
-              <span>Prénom Nom</span>
-              <span class="text-primary pull-right">Poste</span>
-            </h3>
-          </div>
-          <div class="panel-body text-primary">
-            <table class="table table-responsive table-hover table-borderless">
-              <tbody>
-                <tr>
-                  <td class="text-right" data-toggle="tooltip" data-placement="top" title="Adresse mail" data-container="body"><i class="material-icons">contact_mail</i></td>
-                  <td>Adresse mail</td>
-                </tr>
-                <tr>
-                  <td class="text-right" data-toggle="tooltip" data-placement="top" title="Numéro de téléphone" data-container="body"><i class="material-icons">contact_phone</i></td>
-                  <td>###########</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
+</div>
         <!-- Contact-end -->
       </div>
       <div class="panel-footer">

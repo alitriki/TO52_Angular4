@@ -20,20 +20,17 @@
                 <ul class="nav nav-tabs" data-tabs="tabs">
                   <li class="active">
                     <a href="#salaires" data-toggle="tab">
-                      <i class="material-icons">euro_symbol</i>
-                      SALAIRE
+                      <i class="material-icons">euro_symbol</i> SALAIRE
                     </a>
                   </li>
                   <li>
                     <a href="#avis" data-toggle="tab">
-                      <i class="material-icons">star</i>
-                      AVIS
+                      <i class="material-icons">star</i> AVIS
                     </a>
                   </li>
                   <li>
                     <a href="#nbetudiants" data-toggle="tab">
-                      <i class="material-icons">people</i>
-                      ETUDIANTS
+                      <i class="material-icons">people</i> ETUDIANTS
                     </a>
                   </li>
                 </ul>
@@ -124,26 +121,28 @@
       <div class="panel-heading">
         <h3 class="panel-title">Entreprises</h3>
       </div>
-      <div class="panel-body panel-fixed" *ngFor="let entreprise of entreprises">
-       <div class="panel panel-default ">
-          <div class="panel-body">
-            <a href="#">
-              <div class="col-md-8 col-xs-12">
-                <table class="table table-responsive table-borderless">
-                  <tbody>
-                    <tr>
-                      <td style="max-width: 36px; min-width: 36px;">
-                        <img width="50" height="50" src="assets/img/profil.png" alt="Circle Image" class="img-circle img-responsive">
-                      </td>
-                      <td style="vertical-align: middle;">{{entreprise._id}}</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </a>
-            <div class="col-md-4 col-xs-12 text-center">
-              <div type="button" name="button" class="btn btn-primary">
-                Plus
+      <div class="panel-body panel-fixed">
+        <div *ngFor="let entreprise of entreprises">
+          <div class="panel panel-default ">
+            <div class="panel-body">
+              <a href="#">
+                <div class="col-md-8 col-xs-12">
+                  <table class="table table-responsive table-borderless">
+                    <tbody>
+                      <tr>
+                        <td style="max-width: 36px; min-width: 36px;">
+                          <img width="50" height="50" src="assets/img/profil.png" alt="Circle Image" class="img-circle img-responsive">
+                        </td>
+                        <td style="vertical-align: middle;">{{entreprise.nom}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </a>
+              <div class="col-md-4 col-xs-12 text-center">
+                <div type="button" name="button" class="btn btn-primary">
+                  Plus
+                </div>
               </div>
             </div>
           </div>
