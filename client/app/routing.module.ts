@@ -15,6 +15,8 @@ import { EntreprisePageComponent } from './entreprise_page/entreprise-page.compo
 import { StagesRechercheComponent } from './stages_recherche/stages-recherche.component';
 import { StagesResultatComponent } from './stages_resultat/stages-resultat.component';
 import { ModifierProfilComponent } from './modifier_profil/modifier-profil.component';
+import { StageEnregistrementComponent } from './stage_enregistrement/stage-enregistrement.component';
+import { EntretienEnregistrementComponent } from './entretien_enregistrement/entretien-enregistrement.component';
 import { AcceuilComponent } from './acceuil/acceuil.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -34,6 +36,8 @@ const routes: Routes = [
   { path: 'stages_resultat', component: StagesResultatComponent, canActivate: [AuthGuardLogin] },
   { path: 'stages_resultat/:criteres', component: StagesResultatComponent, canActivate: [AuthGuardLogin] },
   { path: 'modifier_profil', component: ModifierProfilComponent, canActivate: [AuthGuardLogin] },
+  { path: 'stage_enregistrement', component: StageEnregistrementComponent, canActivate: [AuthGuardLogin] },
+  { path: 'entretien_enregistrement', component: EntretienEnregistrementComponent, canActivate: [AuthGuardLogin] },
   { path: 'acceuil', component: AcceuilComponent, canActivate: [AuthGuardLogin] },
   { path: 'header', component: HeaderComponent },
   { path: 'footer', component: FooterComponent }

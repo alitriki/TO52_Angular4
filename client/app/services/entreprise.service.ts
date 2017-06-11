@@ -35,6 +35,10 @@ export class EntrepriseService {
     return this.http.get('/api/entreprisesTroisCriteres/'+params).map(res => res.json());
   }
 
+  getEntrepriseByName(nom: String): Observable<any> {
+    return this.http.get(`/api/entrepriseByName/${nom}`).map(res => res.json());
+  }
+
   getDomaines(): Observable<any> {
     return this.http.get('/api/domaines').map(res => res.json());
   }

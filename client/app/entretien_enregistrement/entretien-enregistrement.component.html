@@ -1,0 +1,360 @@
+<!-- Enregistrement-entretien -->
+
+     <div class="panel panel-primary">
+       <div class="panel-heading">
+         <h3 class="panel-title">Enregistrement d'un entretien</h3>
+       </div>
+       <div class="panel-body">
+         <form id="form_enreg_entretien" class="" action="#" method="post">
+           <div class="col-sm-5 col-xs-12">
+             <div class="col-sm-12 col-xs-12">
+
+               <label class="label label-primary">Entreprise</label>
+               <br>
+               <div class="form-group label-floating"  id="nomEntrepriseLabel">
+                 <label class="control-label">Nom</label>
+                 <input type="text" class="form-control" id="nomEntrepriseInput" onclick="displaySelect('nomEntreprise');">
+                 <select name="entreprise" id="nomEntrepriseSelect" style="display: none" class="form-control" required="required"  (change)="navSelected($event)">
+                       <option></option>
+                       <option *ngFor="let entreprise of entreprises">{{entreprise.nom}}</option>
+                       <option value="Nouveau">Nouveau</option>
+                     </select>
+                 <input style="display:none" class="form-control" type="text" name="nouvelle_entreprise" id="nouvelle_entreprise" value="">
+               </div>
+             </div>
+             <div class="col-sm-12 col-xs-12">
+               <div class="form-group label-floating" id="siteLabel">
+                 <label class="control-label">Site</label>
+                 <input type="text" class="form-control" id="siteInput" onclick="displaySelect('site');">
+                 <select name="site" id="siteSelect" style="display:none" class="form-control" required="required">
+                     <option></option>
+                     <option *ngFor="let site of entreprise.sites">{{site.nom}}</option>
+                     <option>Nouveau site</option>
+                   </select>
+                 <input style="display:none" class="form-control" type="text" name="nouveau_site" id="nouveau_site" value="">
+               </div>
+             </div>
+             <div class="col-xs-12">
+               <label class="label label-primary">Interviewer</label>
+             </div>
+             <div class="col-sm-6 col-xs-12">
+               <div class="form-group label-floating">
+                 <label class="control-label">Prénom</label>
+                 <input type="text" class="form-control" name="prenom_interviewer" id="prenom_interviewer" required="required">
+               </div>
+             </div>
+             <div class="col-sm-6 col-xs-12">
+               <div class="form-group label-floating">
+                 <label class="control-label">Nom</label>
+                 <input type="text" class="form-control" name="nom_interviewer" id="nom_interviewer" required="required">
+               </div>
+             </div>
+             <div class="col-sm-12 col-xs-12">
+               <div class="form-group label-floating">
+                 <label class="control-label">Poste</label>
+                 <input type="text" class="form-control" name="poste_interviewer" id="poste_interviewer">
+               </div>
+             </div>
+             <div class="col-sm-12 col-xs-12">
+               <div class="form-group label-floating">
+                 <label class="control-label">Adresse mail</label>
+                 <input type="email" class="form-control" name="email_interviewer" id="email_interviewer">
+               </div>
+             </div>
+             <div class="col-sm-12 col-xs-12">
+               <div class="form-group label-floating">
+                 <label class="control-label">Tel</label>
+                 <input type="text" class="form-control" name="tel_interviewer" id="te_interviewer">
+               </div>
+             </div>
+             <div class="col-xs-12">
+               <button type="button" onclick="showInterviewer2()" class="btn btn-default btn-sm" id="btn_interviewer2">Autre interviewer</button>
+             </div>
+             <div style="display:none" id="div_interviewer2">
+               <div class="col-xs-12">
+                 <label class="label label-primary">Autre interviewer</label>
+               </div>
+               <div class="col-sm-6 col-xs-12">
+                 <div class="form-group label-floating">
+                   <label class="control-label">Prénom</label>
+                   <input type="text" class="form-control" name="prenom_interviewer2" id="prenom_interviewer2" required="required">
+                 </div>
+               </div>
+               <div class="col-sm-6 col-xs-12">
+                 <div class="form-group label-floating">
+                   <label class="control-label">Nom</label>
+                   <input type="text" class="form-control" name="nom_interviewer2" id="nom_interviewer2" required="required">
+                 </div>
+               </div>
+               <div class="col-sm-12 col-xs-12">
+                 <div class="form-group label-floating">
+                   <label class="control-label">Poste</label>
+                   <input type="text" class="form-control" name="poste_interviewer2" id="poste_interviewer2">
+                 </div>
+               </div>
+               <div class="col-sm-12 col-xs-12">
+                 <div class="form-group label-floating">
+                   <label class="control-label">Adresse mail</label>
+                   <input type="email" class="form-control" name="email_interviewer2" id="email_interviewer2">
+                 </div>
+               </div>
+               <div class="col-sm-12 col-xs-12">
+                 <div class="form-group label-floating">
+                   <label class="control-label">Tel</label>
+                   <input type="text" class="form-control" name="tel_interviewer2" id="tel_interviewer2">
+                 </div>
+               </div>
+             </div>
+           </div>
+           <div class="col-sm-7 col-xs-12">
+             <div class="col-xs-12">
+               <label class="label label-primary">Entretien</label>
+             </div>
+             <div class="col-sm-6 col-xs-6">
+               <div class="form-group label-floating">
+                 <label class="control-label">Type d'entretien</label>
+                 <div class="radio">
+                   <label>
+                       <input type="radio" name="type_entretien">
+                       ST20
+                     </label>
+                 </div>
+                 <div class="radio">
+                   <label>
+                       <input type="radio" name="type_entretien">
+                       ST40
+                     </label>
+                 </div>
+                 <div class="radio">
+                   <label>
+                       <input type="radio" name="type_entretien">
+                       ST50
+                     </label>
+                 </div>
+               </div>
+             </div>
+             <div class="col-sm-6 col-xs-6">
+               <div class="form-group label-floating">
+                 <label class="control-label">Date</label>
+                 <input type="text" class="datepicker form-control" />
+               </div>
+             </div>
+             <div class="col-sm-6 col-xs-6">
+               <div class="form-group label-floating">
+                 <label class="control-label">Moyen de candidature</label>
+                 <select name="moyen_candidature" id="moyen_candidature" class="form-control" required="required">
+                     <option></option>
+                     <option>Mail</option>
+                     <option>Courrier</option>
+                     <option>Plateforme de recrutement l'entreprise</option>
+                     <option>Autre</option>
+                   </select>
+               </div>
+             </div>
+             <div class="col-sm-4 col-xs-12">
+              <div class="form-group label-floating">
+               <label class="control-label">Candidature spontanée</label>
+               <div class="radio">
+                 <label>
+                     <input type="radio" name="candidature_spontanee" onclick="showOffreDiv()">
+                     Oui
+                   </label>
+               </div>
+               <div class="radio">
+                 <label>
+                     <input type="radio" name="candidature_spontanee" onclick="hideOffreDiv()">
+                     Non
+                   </label>
+               </div>
+             </div>
+             </div>
+             <div style="display: none" id="intitule_offre" class="col-sm-8 col-xs-12">
+               <div class="form-group label-floating">
+                 <label class="control-label">Intitulé de l'offre</label>
+                 <textarea class="form-control" rows="2" id="offre" name="offre"></textarea>
+               </div>
+             </div>
+             <div class="col-sm-4 col-xs-6">
+               <div class="form-group label-floating">
+                 <label class="control-label">Type d'entretien</label>
+                 <select name="type_entretien" id="type_entretien" class="form-control" required="required">
+                     <option></option>
+                     <option>Téléphonique</option>
+                     <option>Visiophone (Skype)</option>
+                     <option>Locaux de l'UTBM</option>
+                     <option>Locaux de l'entreprise</option>
+                     <option>Autre</option>
+                   </select>
+               </div>
+             </div>
+             <div class="col-sm-4 col-xs-6">
+               <div class="form-group label-floating">
+                 <label class="control-label">Nature de l'entretien</label>
+                 <select name="nature_entretien" id="nature_entretien" class="form-control" required="required">
+                     <option></option>
+                     <option>RH</option>
+                     <option>Technique</option>
+                     <option>Autre</option>
+                   </select>
+               </div>
+             </div>
+             <div id="intitule_offre" class="col-sm-12 col-xs-12">
+               <div class="form-group label-floating">
+                 <label class="control-label">Déroulement</label>
+                 <textarea class="form-control" rows="2" id="deroulement" name="deroulement"></textarea>
+               </div>
+             </div>
+             <div class="col-sm-6 col-xs-12">
+               <div class="form-group label-floating">
+                 <label class="control-label">CV utilisé</label>
+                   <input type="file" name="cv" id="cv" class="file"><button class="btn btn-default btn-sm btn-round btn-block"> CV utilisé<i class="material-icons md-18">attach_file</i></button>
+                   <br>
+               </div>
+             </div>
+             <div class="col-sm-6 col-xs-12">
+               <div class="form-group label-floating">
+                 <label class="control-label">Lettre de motivation utilisée</label>
+                   <input type="file" name="lm" id="lm" class="file"><button class="btn btn-default btn-sm btn-round btn-block"> Lettre de motivation utilisée<i class="material-icons md-18">attach_file</i></button>
+                   <br>
+               </div>
+             </div>
+             <div id="proposition">
+               <div class="col-xs-12">
+                 <label class="label label-primary">Conclusion</label>
+               </div>
+               <div class="col-sm-3 col-xs-12">
+                <div class="form-group label-floating">
+                 <label class="control-label">Proposition de stage</label>
+                 <div class="radio">
+                   <label>
+                       <input type="radio" name="proposition_stage" onclick="showStageDiv()">
+                       Oui
+                     </label>
+                 </div>
+                 <div class="radio">
+                   <label>
+                       <input type="radio" name="proposition_stage" onclick="hideStageDiv()">
+                       Non
+                     </label>
+                 </div>
+               </div>
+               </div>
+               <div style="display: none;" id="stage_content" class="col-sm-9 col-xs-12">
+
+                 <div class="col-sm-4 col-xs-12">
+                   <div class="form-group label-floating">
+                     <label class="control-label">Rémunération proposée</label>
+                     <div class="input-group">
+                       <input type="number" name="remuneration_stage" id="remuneration_stage" class="form-control" min="0" max="10000" value="0" required="required">
+                       <span class="input-group-addon">€</span>
+                     </div>
+                   </div>
+                 </div>
+                 <div class="col-sm-4 col-xs-12">
+                   <div class="form-group label-floating">
+                     <label class="control-label">Avantages</label>
+                     <textarea class="form-control" rows="2" id="avantages_stages" name="avantages_stages"></textarea>
+                   </div>
+                 </div>
+                 <div class="col-sm-4 col-xs-12">
+                   <div class="form-group label-floating">
+                    <label class="control-label">Stage accepté</label>
+                    <div class="radio">
+                      <label>
+                          <input type="radio" name="acceptation_stage">
+                          Oui
+                        </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                          <input type="radio" name="acceptation_stage">
+                          Non
+                        </label>
+                    </div>
+                  </div>
+                 </div>
+                 <div class="col-sm-12 col-xs-12">
+                   <div class="form-group label-floating">
+                     <label class="control-label">Raisons</label>
+                     <textarea class="form-control" rows="2" id="raisons_decision_stage" name="raisons_decision_stage"></textarea>
+                   </div>
+                 </div>
+               </div>
+             </div>
+             <div id="avis">
+               <div class="col-sm-12 col-xs-12">
+                 <label class="label label-primary">Expérience de l'entretien</label>
+               </div>
+               <div class="col-xs-12">
+                 <div class="col-sm-6 col-xs-12 text-primary">
+                   Niveau de difficulté
+                 </div>
+                 <div class="col-sm-6 col-xs-12">
+                   <small>Input Difficulté</small>
+                 </div>
+               </div>
+               <div class="col-xs-12">
+                 <div class="col-sm-6 col-xs-12 text-primary">
+                   Niveau d'intérêt pour l'entreprise
+                 </div>
+                 <div class="col-sm-6 col-xs-12">
+                   <small>Input Intérêt</small>
+                 </div>
+               </div>
+               <div class="col-xs-12">
+                 <div class="col-sm-6 col-xs-12 text-primary">
+                   Appréciation générale personnelle
+                 </div>
+                 <div class="col-sm-6 col-xs-12">
+                   <small>Input Appréciation</small>
+                 </div>
+               </div>
+             </div>
+           </div>
+           <!-- buttons -->
+           <div class="col-sm-12 col-xs-12">
+             <div class="col-sm-6 col-xs-6 text-left">
+               <button class="btn btn-danger" type="reset">Annuler</button>
+             </div>
+             <div class="col-sm-6 col-xs-6 text-right">
+               <button class="btn btn-primary" type="submit">Valider</button>
+             </div>
+           </div>
+           <!-- Notifications -->
+           <div class="col-sm-12 col-xs-12">
+             <div class="col-sm-12 col-xs-12">
+               <!-- TODO: ng-show-success -->
+               <div class="alert alert-primary">
+                 <div class="container-fluid">
+                   <div class="alert-icon">
+                     <i class="material-icons">check</i>
+                   </div>
+                   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                   <span aria-hidden="true"><i class="material-icons">clear</i></span>
+                   </button>
+                   <b>Success Alert:</b> Mise à jour éffectuée
+                 </div>
+               </div>
+             </div>
+             <div class="col-sm-12 col-xs-12">
+               <!-- TODO: ng-show-error -->
+               <div class="alert alert-danger">
+                 <div class="container-fluid">
+                   <div class="alert-icon">
+                     <i class="material-icons">error_outline</i>
+                   </div>
+                   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                   <span aria-hidden="true"><i class="material-icons">clear</i></span>
+                   </button>
+                   <b>Error Alert:</b> Erreur
+                 </div>
+               </div>
+             </div>
+           </div>
+         </form>
+       </div>
+       <div class="panel-footer">
+       </div>
+
+     </div>
+     <!-- Enregistrement-entretien -->

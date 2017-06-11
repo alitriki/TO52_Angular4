@@ -26,6 +26,8 @@ import { ModifierProfilComponent } from './modifier_profil/modifier-profil.compo
 import { AcceuilComponent } from './acceuil/acceuil.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { StageEnregistrementComponent } from './stage_enregistrement/stage-enregistrement.component';
+import { EntretienEnregistrementComponent } from './entretien_enregistrement/entretien-enregistrement.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,9 @@ import { FooterComponent } from './footer/footer.component';
     AcceuilComponent,
     StagesRechercheComponent,
     StagesResultatComponent,
-    ModifierProfilComponent
+    StageEnregistrementComponent,
+    ModifierProfilComponent,
+    EntretienEnregistrementComponent
   ],
   imports: [
     RoutingModule,

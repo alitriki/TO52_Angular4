@@ -52,4 +52,12 @@ export default class EntrepriseCtrl extends BaseCtrl {
     });
   }
 
+  // Get by id
+  getEntrepriseByName = (req, res) => {
+    this.model.findOne({ nom: req.params.nom }, (err, obj) => {
+      if (err) { return console.error(err); }
+      res.json(obj);
+    });
+  }
+
 }
