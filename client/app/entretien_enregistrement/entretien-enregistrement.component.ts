@@ -23,9 +23,21 @@ export class EntretienEnregistrementComponent implements OnInit {
     );
   }
 
-  navSelected($event) {
-    console.log($event.target.value + " Clicked!");
+  navSelected($event,$in) {
+    console.log($in + " Clicked!");
     this.getEntrepriseByName($event.target.value);
+    var input=  document.getElementById($in+'Input');
+    var input1=  document.getElementById($in+'Input1');
+    var label= document.getElementById($in+'Label');
+    var select=  document.getElementById($in+'Select');
+    // label.classList.remove('label-floating');
+    // label.classList.add('label-static');
+    if ($event.target.value == "Ajouter" ){
+      console.log('ok');
+      select.style.display = "none";
+      input1.style.display = "inline";
+      // input.style.display = "none";
+    }
 
   }
 

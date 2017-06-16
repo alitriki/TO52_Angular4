@@ -11,27 +11,27 @@
 
           <label class="label label-primary">Entreprise</label>
           <br>
-          <div class="form-group label-floating"  id="nomEntrepriseLabel">
+          <div class="form-group label-floating" id="nomEntrepriseLabel">
             <label class="control-label">Nom</label>
             <input type="text" class="form-control" id="nomEntrepriseInput" onclick="displaySelect('nomEntreprise');">
-            <select name="entreprise" id="nomEntrepriseSelect" style="display: none" class="form-control" required="required"  (change)="navSelected($event)">
+            <input style="display: none" class="form-control" type="text" id="nomEntrepriseInput1">
+            <select name="entreprise" id="nomEntrepriseSelect" style="display: none" class="form-control" required="required" (change)="navSelected($event,'nomEntreprise')">
                   <option></option>
                   <option *ngFor="let entreprise of entreprises">{{entreprise.nom}}</option>
-                  <option value="Nouveau">Nouveau</option>
+                  <option value="Ajouter">Ajouter</option>
                 </select>
-            <input style="display:none" class="form-control" type="text" name="nouvelle_entreprise" id="nouvelle_entreprise" value="">
           </div>
         </div>
         <div class="col-sm-12 col-xs-12">
           <div class="form-group label-floating" id="siteLabel">
             <label class="control-label">Site</label>
             <input type="text" class="form-control" id="siteInput" onclick="displaySelect('site');">
-            <select name="site" id="siteSelect" style="display:none" class="form-control" required="required">
+            <input style="display: none" class="form-control" type="text" id="siteInput1">
+            <select name="site" id="siteSelect" style="display:none" class="form-control" required="required" (change)="navSelected($event,'site')">
                 <option></option>
                 <option *ngFor="let site of entreprise.sites">{{site.nom}}</option>
-                <option>Nouveau site</option>
+                <option>Ajouter</option>
               </select>
-            <input style="display:none" class="form-control" type="text" name="nouveau_site" id="nouveau_site" value="">
           </div>
         </div>
         <div class="col-xs-12">
@@ -197,15 +197,15 @@
         <div class="col-sm-6 col-xs-12">
           <div class="form-group label-floating">
             <label class="control-label">Rapport de stage</label>
-              <input type="file" name="rapport_stage" id="rapport_stage" class="file"><button class="btn btn-default btn-sm btn-round btn-block"> Rapport de stage<i class="material-icons md-18">attach_file</i></button>
-              <br>
+            <input type="file" name="rapport_stage" id="rapport_stage" class="file"><button class="btn btn-default btn-sm btn-round btn-block"> Rapport de stage<i class="material-icons md-18">attach_file</i></button>
+            <br>
           </div>
         </div>
         <div class="col-sm-6 col-xs-12">
           <div class="form-group label-floating">
             <label class="control-label">Soutenance de stage</label>
-              <input type="file" name="soutenance_stage" id="soutenance_stage" class="file"><button class="btn btn-default btn-sm btn-round btn-block"> Soutenance de stage<i class="material-icons md-18">attach_file</i></button>
-              <br>
+            <input type="file" name="soutenance_stage" id="soutenance_stage" class="file"><button class="btn btn-default btn-sm btn-round btn-block"> Soutenance de stage<i class="material-icons md-18">attach_file</i></button>
+            <br>
           </div>
         </div>
         <div id="emploi">
@@ -213,39 +213,39 @@
             <label class="label label-primary">Emploi</label>
           </div>
           <div class="col-sm-3 col-xs-12">
-           <div class="form-group label-floating">
-            <label class="control-label">Proposition d'emploi</label>
-            <div class="radio">
-              <label>
+            <div class="form-group label-floating">
+              <label class="control-label">Proposition d'emploi</label>
+              <div class="radio">
+                <label>
                   <input type="radio" name="proposition_emploi" onclick="showEmploiDiv()">
                   Oui
                 </label>
-            </div>
-            <div class="radio">
-              <label>
+              </div>
+              <div class="radio">
+                <label>
                   <input type="radio" name="proposition_emploi" onclick="hideEmploiDiv()">
                   Non
                 </label>
+              </div>
             </div>
-          </div>
           </div>
           <div style="display: none;" id="emploi_content" class="col-sm-9 col-xs-12">
             <div class="col-sm-4 col-xs-12">
               <div class="form-group label-floating">
-               <label class="control-label">Type d'emploi</label>
-               <div class="radio">
-                 <label>
+                <label class="control-label">Type d'emploi</label>
+                <div class="radio">
+                  <label>
                      <input type="radio" name="type_emploi">
                      CDD
                    </label>
-               </div>
-               <div class="radio">
-                 <label>
+                </div>
+                <div class="radio">
+                  <label>
                      <input type="radio" name="type_emploi">
                      CDI
                    </label>
-               </div>
-             </div>
+                </div>
+              </div>
             </div>
             <div class="col-sm-4 col-xs-12">
               <div class="form-group label-floating">
@@ -264,20 +264,20 @@
             </div>
             <div class="col-sm-4 col-xs-12">
               <div class="form-group label-floating">
-               <label class="control-label">Emploi accepté</label>
-               <div class="radio">
-                 <label>
+                <label class="control-label">Emploi accepté</label>
+                <div class="radio">
+                  <label>
                      <input type="radio" name="acceptation_emploi">
                      Oui
                    </label>
-               </div>
-               <div class="radio">
-                 <label>
+                </div>
+                <div class="radio">
+                  <label>
                      <input type="radio" name="acceptation_emploi">
                      Non
                    </label>
-               </div>
-             </div>
+                </div>
+              </div>
             </div>
             <div class="col-sm-8 col-xs-12">
               <div class="form-group label-floating">
