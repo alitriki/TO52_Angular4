@@ -9,36 +9,38 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Dédale</a>
+      <a class="navbar-brand" [routerLink]="['accueil']">Dédale</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="navbar-collapse-menu">
       <ul class="nav navbar-nav">
-        <li class="active">
-          <a href="#">
-            <i class="material-icons">home</i>Accueil<span class="sr-only">(current)</span>
+        <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+          <a [routerLink]="['accueil']">
+            <i class="material-icons">home</i>Accueil<span class="sr-only"></span>
           </a>
         </li>
-        <li><a href="/stages_recherche">Stages & Emplois</a></li>
-        <li><a href="#">Entreprises</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle"  role="button" aria-haspopup="true" aria-expanded="false">Enregistrer <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Un stage</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Un entretien</a></li>
-          </ul>
+        <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+          <a [routerLink]="['stages_recherche']">Stages & Emplois</a>
+        </li>
+        <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+          <a [routerLink]="['entreprises_palmares']">Entreprises</a>
+        </li>
+        <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+          <a [routerLink]="['stage_enregistrement']">Enreg. Stage</a>
+        </li>
+        <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+          <a [routerLink]="['entretien_enregistrement']">Enreg. Entretien</a>
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li>
-          <a href="#">
-            <i class="material-icons">face</i> Prenom Nom
+        <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+          <a [routerLink]="['modifier_profil']">
+            <i class="material-icons">face</i> {{user.nom}} {{user.prenom}}
           </a>
         </li>
         <li>
-          <a href="#">
+          <a [routerLink]="['logout']">
             <i class="material-icons">lock_outline</i>Se déconnecter
           </a>
         </li>
