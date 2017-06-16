@@ -26,7 +26,7 @@ export class ModifierProfilComponent implements OnInit {
 
   getUser() {
     this.userService.getUser(this.auth.currentUser).subscribe(
-      // this.user.date_naissance => moment().format('YYYY-MM-DD HH:mm:ss'),
+      //this.user.date_naissance => moment().format('YYYY-MM-DD') = this.user.date_naissance,
       data => this.user = data,
       error => console.log(error),
       () => this.isLoading = false
