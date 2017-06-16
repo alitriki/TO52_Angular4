@@ -2,18 +2,22 @@ import * as express from 'express';
 
 import CatCtrl from './controllers/cat';
 import EntrepriseCtrl from './controllers/entreprise';
-import SiteCtrl from './controllers/site';
+import StageCtrl from './controllers/stage';
+import EntretienCtrl from './controllers/entretien';
 import UserCtrl from './controllers/user';
 import Cat from './models/cat';
 import Entreprise from './models/entreprise';
 import Site from './models/site';
+import Stage from './models/stage';
+import Entretien from './models/entretien';
 import User from './models/user';
 
 export default function setRoutes(app) {
 
   const catCtrl = new CatCtrl();
   const entrepriseCtrl = new EntrepriseCtrl();
-  const siteCtrl = new SiteCtrl();
+  const stageCtrl = new StageCtrl();
+  const entretienCtrl = new EntretienCtrl();
   const userCtrl = new UserCtrl();
 
   // Cats
@@ -43,7 +47,18 @@ export default function setRoutes(app) {
 
   app.route('/api/entreprise/:id').get(entrepriseCtrl.get);
   app.route('/api/entrepriseByName/:nom').get(entrepriseCtrl.getEntrepriseByName);
-  app.route('/api/site/:ids').get(siteCtrl.get);
+  app.route('/api/stage/:ids').get(stageCtrl.get);
+
+  app.route('/api/entreprisesByStudentNb/:type_stage').get(stageCtrl.getEntreprisesByStudentNb);
+  app.route('/api/entreprisesByAvis/:type_stage').get(stageCtrl.getEntreprisesByAvis);
+  app.route('/api/entreprisesBySalaire/:type_stage').get(stageCtrl.getEntreprisesBySalaire);
+
+  app.route('/api/stagesST20/:entrepriseId').get(stageCtrl.getStagesST20ByEntrepriseId);
+  app.route('/api/stagesST40/:entrepriseId').get(stageCtrl.getStagesST40ByEntrepriseId);
+  app.route('/api/stagesST50/:entrepriseId').get(stageCtrl.getStagesST50ByEntrepriseId);
+  app.route('/api/entretiensST20/:entrepriseId').get(entretienCtrl.getEntretiensST20ByEntrepriseId);
+  app.route('/api/entretiensST40/:entrepriseId').get(entretienCtrl.getEntretiensST40ByEntrepriseId);
+  app.route('/api/entretiensST50/:entrepriseId').get(entretienCtrl.getEntretiensST50ByEntrepriseId);
   app.route('/api/domaines').get(entrepriseCtrl.getDomaines);
   app.route('/api/entreprisesUnCritere').get(entrepriseCtrl.getEntreprisesUnCritere);
   app.route('/api/entreprisesUnCritere/:criteres').get(entrepriseCtrl.getEntreprisesUnCritere);

@@ -2,7 +2,7 @@ import * as mongoose from 'mongoose';
 
 var Schema = mongoose.Schema;
 const entrepriseSchema = new mongoose.Schema({
-  nom: {type: String, unique: true, required : true},
+  nom: { type: String, unique: true, required: true },
   tel: Number,
   logo: String,
   annee_fondation: Number,
@@ -12,7 +12,25 @@ const entrepriseSchema = new mongoose.Schema({
   type: String,
   nb_employes: Number,
   sites: [
-    {site_id: {type: Schema.Types.ObjectId, ref: 'Site'}}
+    {
+      site_id: { type: Schema.Types.ObjectId },
+      nom: String,
+      adresse: String,
+      tel: Number,
+      pays: String,
+      region: String,
+      ville: String,
+      contacts:
+      [
+        {
+          nom: String,
+          prenom: String,
+          poste: String,
+          tel: Number,
+          email: String
+        }
+      ]
+    }
   ]
 });
 

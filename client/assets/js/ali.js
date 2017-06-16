@@ -8,13 +8,12 @@ function displaySelect(val){
 var input=  document.getElementById(val+'Input');
 var label= document.getElementById(val+'Label');
 var select=  document.getElementById(val+'Select');
-var newEntreprise = document.getElementById('nouvelle_entreprise');
 input.style.display="none";
 select.style.display="inline";
 label.classList.remove('label-floating');
 label.classList.add('label-static');
-newEntreprise.style.display = select.text == "Nouveau" ? "inline" : "none";
-select.style.display = entrepriseValue == "Nouveau" ? "none" : "inline";
+input.style.display = select.text == "Nouveau" ? "inline" : "none";
+select.style.display = select.text == "Nouveau" ? "none" : "inline";
 }
 
 function testEntreprise(){

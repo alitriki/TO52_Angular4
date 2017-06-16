@@ -54,7 +54,8 @@ export class StagesResultatComponent implements OnInit {
   getEntreprisesUnCritere(criteres : Critere) {
     this.entrepriseService.getEntreprisesUnCritere(criteres).subscribe(
       data => {this.entreprises1 = data;
-      console.log(data)},
+      // console.log(data)
+    },
       error => console.log(error)
     );
   }
@@ -62,7 +63,8 @@ export class StagesResultatComponent implements OnInit {
   getEntreprisesDeuxCriteres(criteres : Critere) {
     this.entrepriseService.getEntreprisesDeuxCriteres(criteres).subscribe(
       data => {this.entreprises2 = data;
-      console.log(data)},
+      // console.log(data)
+    },
       error => console.log(error)
     );
   }
@@ -70,7 +72,8 @@ export class StagesResultatComponent implements OnInit {
   getEntreprisesTroisCriteres(criteres : Critere) {
     this.entrepriseService.getEntreprisesTroisCriteres(criteres).subscribe(
       data => {this.entreprises3 = data;
-      console.log(data)},
+      console.log(data)
+    },
       error => console.log(error)
     );
   }
