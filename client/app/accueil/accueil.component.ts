@@ -4,11 +4,11 @@ import { AuthService } from '../services/auth.service';
 import { UserService } from '../services/user.service';
 
 @Component({
-  selector: 'app-acceuil',
-  templateUrl: './acceuil.component.html',
-  styleUrls: ['./acceuil.component.scss']
+  selector: 'app-accueil',
+  templateUrl: './accueil.component.html',
+  styleUrls: ['./accueil.component.scss']
 })
-export class AcceuilComponent implements OnInit {
+export class AccueilComponent implements OnInit {
 
   user = {};
   isLoading = true;

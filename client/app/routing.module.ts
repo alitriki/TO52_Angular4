@@ -17,12 +17,12 @@ import { StagesResultatComponent } from './stages_resultat/stages-resultat.compo
 import { ModifierProfilComponent } from './modifier_profil/modifier-profil.component';
 import { StageEnregistrementComponent } from './stage_enregistrement/stage-enregistrement.component';
 import { EntretienEnregistrementComponent } from './entretien_enregistrement/entretien-enregistrement.component';
-import { AcceuilComponent } from './acceuil/acceuil.component';
+import { AccueilComponent } from './accueil/accueil.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 
 const routes: Routes = [
-  { path: '', component: AcceuilComponent, canActivate: [AuthGuardLogin] },
+  { path: '', component: AccueilComponent, canActivate: [AuthGuardLogin] },
   { path: 'cats', component: CatsComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
@@ -38,9 +38,10 @@ const routes: Routes = [
   { path: 'modifier_profil', component: ModifierProfilComponent, canActivate: [AuthGuardLogin] },
   { path: 'stage_enregistrement', component: StageEnregistrementComponent, canActivate: [AuthGuardLogin] },
   { path: 'entretien_enregistrement', component: EntretienEnregistrementComponent, canActivate: [AuthGuardLogin] },
-  { path: 'acceuil', component: AcceuilComponent, canActivate: [AuthGuardLogin] },
+  { path: 'accueil', component: AccueilComponent, canActivate: [AuthGuardLogin] },
   { path: 'header', component: HeaderComponent },
-  { path: 'footer', component: FooterComponent }
+  { path: 'footer', component: FooterComponent },
+  { path: '**', redirectTo: 'accueil'}
 ];
 
 @NgModule({

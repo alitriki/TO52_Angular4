@@ -28,7 +28,13 @@ export class RegisterComponent implements OnInit {
     this.registerForm = this.formBuilder.group({
       email: this.email,
       password: this.password,
-      role: 'etudiant'
+      role: 'etudiant',
+      nom: '',
+      prenom: '',
+      date_naissance: '',
+      tel: '',
+      branche: '',
+      filiere: ''
     });
   }
 
@@ -43,7 +49,7 @@ export class RegisterComponent implements OnInit {
     this.userService.register(this.registerForm.value).subscribe(
       res => {
         this.toast.setMessage('Enregistrement effectué avec succès !', 'success');
-        this.router.navigate(['/login']);
+        // this.router.navigate(['/login']);
       },
       error => this.toast.setMessage('Cette adresse mail est déjà utilisée', 'danger')
     );

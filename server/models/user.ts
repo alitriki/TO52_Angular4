@@ -10,7 +10,7 @@ const userSchema = new mongoose.Schema({
   photo : String,
   date_naissance: Date,
   sexe: String,
-  tel: Number,
+  tel: String,
   branche: String,
   filiere: String,
   role: String

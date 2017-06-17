@@ -23,7 +23,7 @@ import { EntreprisePageComponent } from './entreprise_page/entreprise-page.compo
 import { StagesRechercheComponent } from './stages_recherche/stages-recherche.component';
 import { StagesResultatComponent } from './stages_resultat/stages-resultat.component';
 import { ModifierProfilComponent } from './modifier_profil/modifier-profil.component';
-import { AcceuilComponent } from './acceuil/acceuil.component';
+import { AccueilComponent } from './accueil/accueil.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { StageEnregistrementComponent } from './stage_enregistrement/stage-enregistrement.component';
@@ -43,7 +43,7 @@ import { EntretienEnregistrementComponent } from './entretien_enregistrement/ent
     EntreprisePageComponent,
     HeaderComponent,
     FooterComponent,
-    AcceuilComponent,
+    AccueilComponent,
     StagesRechercheComponent,
     StagesResultatComponent,
     StageEnregistrementComponent,
