@@ -51,6 +51,7 @@ export class EntreprisesPalmaresComponent implements OnInit {
     this.salaire3 = false;
   }
 
+// Init
   ngOnInit() {
     this.getEntreprises(0);
     // this.getEntreprisesBySalaire("ST40");
@@ -58,12 +59,28 @@ export class EntreprisesPalmaresComponent implements OnInit {
     // this.getEntreprisesByStudentNb("ST40");
   }
 
+  getEntreprises(index) {
+    this.entrepriseService.getEntreprises().subscribe(
+      data => {
+        this.entreprises = data;
+        this.chooseEntreprise(index);
+      },
+      error => console.log(error)
+    );
+  }
+
+// palmares
 
   getEntreprisesByStudentNb(type_stage) {
     this.stageService.getEntreprisesByStudentNb(type_stage).subscribe(
       data => {
-      this.result = data;
-        // console.log(this.entreprises);
+        this.entreprises = [];
+        this.result = data;
+        for (var i = 0; i < this.result.length; i++) {
+          // console.log(this.result[i]._id);
+          this.entreprises.push(this.result[i]._id);
+        }
+        this.chooseEntreprise(0);
       },
       error => console.log(error)
     );
@@ -72,8 +89,13 @@ export class EntreprisesPalmaresComponent implements OnInit {
   getEntreprisesByAvis(type_stage) {
     this.stageService.getEntreprisesByAvis(type_stage).subscribe(
       data => {
-      this.result = data;
-        console.log(this.result);
+        this.entreprises = [];
+        this.result = data;
+        for (var i = 0; i < this.result.length; i++) {
+          // console.log(this.result[i]._id);
+          this.entreprises.push(this.result[i]._id);
+        }
+        this.chooseEntreprise(0);
       },
       error => console.log(error)
     );
@@ -82,33 +104,31 @@ export class EntreprisesPalmaresComponent implements OnInit {
   getEntreprisesBySalaire(type_stage) {
     this.stageService.getEntreprisesBySalaire(type_stage).subscribe(
       data => {
-      this.result = data;
-      this.entreprises= [];
-      for(var i=0; i<this.result.length;i++){
-        this.entreprises.push(this.result[i]._id);
-      }
-        console.log(this.entreprises);
+        this.entreprises = [];
+        this.result = data;
+        for (var i = 0; i < this.result.length; i++) {
+          // console.log(this.result[i]._id);
+          this.entreprises.push(this.result[i]._id);
+        }
+        this.chooseEntreprise(0);
       },
       error => console.log(error)
     );
   }
 
 
-  getEntreprises(index) {
-    this.entrepriseService.getEntreprises().subscribe(
-      data => {
-      this.entreprises = data;
-        this.entreprise = data[index];
-        // console.log(this.entreprise._id);
-        this.getStagesST20ByEntreprise(this.entreprise._id);
-        this.getStagesST40ByEntreprise(this.entreprise._id);
-        this.getStagesST50ByEntreprise(this.entreprise._id);
-        this.getEntretiensST20ByEntreprise(this.entreprise._id);
-        this.getEntretiensST40ByEntreprise(this.entreprise._id);
-        this.getEntretiensST50ByEntreprise(this.entreprise._id);
-      },
-      error => console.log(error)
-    );
+//select Entreprise
+  chooseEntreprise(index) {
+    this.entreprise = this.entreprises[index];
+    // console.log(this.entreprise);
+    if ( typeof this.entreprise != 'undefined') {
+      this.getStagesST20ByEntreprise(this.entreprise._id);
+      this.getStagesST40ByEntreprise(this.entreprise._id);
+      this.getStagesST50ByEntreprise(this.entreprise._id);
+      this.getEntretiensST20ByEntreprise(this.entreprise._id);
+      this.getEntretiensST40ByEntreprise(this.entreprise._id);
+      this.getEntretiensST50ByEntreprise(this.entreprise._id);
+    }
   }
 
   getEntrepriseById(id) {
@@ -118,15 +138,18 @@ export class EntreprisesPalmaresComponent implements OnInit {
     );
   }
 
+
   //not working
   showContacts(contact: number) {
     this.contactId = contact;
   }
 
+
+// show stages & entretiens
   getStagesST20ByEntreprise(entrepriseId) {
     this.stageService.getStagesST20ByEntrepriseId(entrepriseId).subscribe(
       data => {
-      this.stagesST20 = data;
+        this.stagesST20 = data;
         // console.log(data);
       },
       error => console.log(error)
@@ -136,7 +159,7 @@ export class EntreprisesPalmaresComponent implements OnInit {
   getStagesST40ByEntreprise(entrepriseId) {
     this.stageService.getStagesST40ByEntrepriseId(entrepriseId).subscribe(
       data => {
-      this.stagesST40 = data;
+        this.stagesST40 = data;
         // console.log(data);
       },
       error => console.log(error)
@@ -146,18 +169,17 @@ export class EntreprisesPalmaresComponent implements OnInit {
   getStagesST50ByEntreprise(entrepriseId) {
     this.stageService.getStagesST50ByEntrepriseId(entrepriseId).subscribe(
       data => {
-      this.stagesST50 = data;
+        this.stagesST50 = data;
         // console.log(data);
       },
       error => console.log(error)
     );
   }
 
-
   getEntretiensST20ByEntreprise(entrepriseId) {
     this.entretienService.getEntretiensST20ByEntrepriseId(entrepriseId).subscribe(
       data => {
-      this.entretiensST20 = data;
+        this.entretiensST20 = data;
         // console.log(data);
       },
       error => console.log(error)
@@ -167,7 +189,7 @@ export class EntreprisesPalmaresComponent implements OnInit {
   getEntretiensST40ByEntreprise(entrepriseId) {
     this.entretienService.getEntretiensST40ByEntrepriseId(entrepriseId).subscribe(
       data => {
-      this.entretiensST40 = data;
+        this.entretiensST40 = data;
         // console.log(data);
       },
       error => console.log(error)
@@ -177,30 +199,25 @@ export class EntreprisesPalmaresComponent implements OnInit {
   getEntretiensST50ByEntreprise(entrepriseId) {
     this.entretienService.getEntretiensST50ByEntrepriseId(entrepriseId).subscribe(
       data => {
-      this.entretiensST50 = data;
+        this.entretiensST50 = data;
         // console.log(data);
       },
       error => console.log(error)
     );
   }
 
+
+//not used yet
   getEntrepriseStats(index) {
     this.getEntreprises(index);
-
   }
 
+//to deprecate and replace by database field
   getNoteGenerale(stage: Stage) {
     return (stage.integration_cdt_travail + stage.opportunites_carriere + stage.dirigeants + stage.remuneration_aventages + stage.structure_organisation) / 5;
   }
-
   getNoteGeneraleEntretien(entretien: Entretien) {
     return ((5 - entretien.difficultee) + entretien.appreciation) / 2;
   }
 
-  // getSitesIn(ids) {
-  //   this.siteService.getSitesIn(ids).subscribe(
-  //     data => this.sites = data,
-  //     error => console.log(error)
-  //   );
-  // }
 }

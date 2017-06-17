@@ -63,8 +63,8 @@ getEntreprisesBySalaire = (req, res) => {
           if (err) {
             console.log(err);
           } else {
-            console.log(populatedResult);
-            res.json(populatedResult._id);
+            // console.log(populatedResult);
+            res.json(populatedResult);
           }
 
         });

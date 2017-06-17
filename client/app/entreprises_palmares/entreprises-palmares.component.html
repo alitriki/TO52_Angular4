@@ -61,42 +61,42 @@
                 <br>
               </div>
               <div class="tab-pane" id="avis">
-                <div class="togglebutton col-xs-4">
+                <div class="radio col-xs-4">
                   <label>
-                    <input type="checkbox">
+                    <input type="radio" [(checked)]="avis1" name="optionsRadios" (click)="getEntreprisesByAvis('ST20')">
                       ST20
                    </label>
                 </div>
-                <div class="togglebutton col-xs-4">
+                <div class="radio col-xs-4">
                   <label>
-                    <input type="checkbox" checked="checked">
+                    <input type ="radio" [(checked)]="avis2" name="optionsRadios" (click)="getEntreprisesByAvis('ST40')">
                       ST40
                    </label>
                 </div>
-                <div class="togglebutton col-xs-4">
+                <div class="radio col-xs-4">
                   <label>
-                    <input type="checkbox">
+                    <input type="radio" [(checked)]="avis3" name="optionsRadios" (click)="getEntreprisesByAvis('ST50')">
                       ST50
                    </label>
                 </div>
                 <br>
               </div>
               <div class="tab-pane" id="nbetudiants">
-                <div class="togglebutton col-xs-4">
+                <div class="radio col-xs-4">
                   <label>
-                    <input type="checkbox">
+                    <input type="radio" [(checked)]="nbetudiants1" name="optionsRadios" (click)="getEntreprisesByStudentNb('ST20')">
                       ST20
                    </label>
                 </div>
-                <div class="togglebutton col-xs-4">
+                <div class="radio col-xs-4">
                   <label>
-                    <input type="checkbox" checked="checked">
+                    <input type="radio" [(checked)]="nbetudiants2" name="optionsRadios" (click)="getEntreprisesByStudentNb('ST40')">
                       ST40
                    </label>
                 </div>
-                <div class="togglebutton col-xs-4">
+                <div class="radio col-xs-4">
                   <label>
-                    <input type="checkbox">
+                    <input type="radio" [(checked)]="nbetudiants3" name="optionsRadios" (click)="getEntreprisesByStudentNb('ST50')">
                       ST50
                    </label>
                 </div>
@@ -140,7 +140,7 @@
                 </div>
               </a>
               <div class="col-md-4 col-xs-12 text-center">
-                <div type="button" name="button" class="btn btn-primary" (click)="getEntrepriseStats(i)">
+                <div type="button" name="button" class="btn btn-primary" (click)="chooseEntreprise(i)">
                   Plus
                 </div>
               </div>
