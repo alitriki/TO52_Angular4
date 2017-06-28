@@ -35,4 +35,8 @@ export class StageService {
     return this.http.get(`/api/entreprisesBySalaire/${type_stage}`).map(res => res.json());
   }
 
+
+  getStatsByEntreprise(entrepriseId: String): Observable<any> {
+    return this.http.get(`/api/statsByEntreprise/${entrepriseId}`).map(res => res.json());
+  }
 }

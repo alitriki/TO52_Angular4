@@ -2,6 +2,7 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { RoutingModule } from './routing.module';
 import { SharedModule } from './shared/shared.module';
+import { ChartsModule } from 'ng2-charts';
 import { CatService } from './services/cat.service';
 import { UserService } from './services/user.service';
 import { AuthService } from './services/auth.service';
@@ -28,6 +29,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { StageEnregistrementComponent } from './stage_enregistrement/stage-enregistrement.component';
 import { EntretienEnregistrementComponent } from './entretien_enregistrement/entretien-enregistrement.component';
+import { TestComponent } from './test/test.component';
 
 @NgModule({
   declarations: [
@@ -48,11 +50,13 @@ import { EntretienEnregistrementComponent } from './entretien_enregistrement/ent
     StagesResultatComponent,
     StageEnregistrementComponent,
     ModifierProfilComponent,
-    EntretienEnregistrementComponent
+    EntretienEnregistrementComponent,
+    TestComponent
   ],
   imports: [
     RoutingModule,
-    SharedModule
+    SharedModule,
+    ChartsModule
   ],
   providers: [
     AuthService,

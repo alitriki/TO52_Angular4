@@ -51,34 +51,34 @@
       <div class="panel-heading">
         <h3 class="panel-title">Sites</h3>
       </div>
-      <div class="panel-body panel-fixed" >
+      <div class="panel-body panel-fixed">
         <!-- Sites -->
         <div *ngFor="let site of entreprise.sites">
 
 
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">
               <span class="text-muted">{{site.pays}} </span><span class="text-primary">{{site.ville}} </span><span>{{site.nom}} </span>
               <span class="pull-right"><a href="#">Contacts</a></span>
             </h3>
-          </div>
-          <div class="panel-body text-primary">
-            <table class="table table-responsive table-hover table-borderless">
-              <tbody>
-                <tr>
-                  <td class="text-right" data-toggle="tooltip" data-placement="top" title="Adresse" data-container="body"><i class="material-icons">place</i></td>
-                  <td>{{site.adresse}}</td>
-                </tr>
-                <tr>
-                  <td class="text-right" data-toggle="tooltip" data-placement="top" title="Numéro de téléphone" data-container="body"><i class="material-icons">call</i></td>
-                  <td>{{site.tel}}</td>
-                </tr>
-              </tbody>
-            </table>
+            </div>
+            <div class="panel-body text-primary">
+              <table class="table table-responsive table-hover table-borderless">
+                <tbody>
+                  <tr>
+                    <td class="text-right" data-toggle="tooltip" data-placement="top" title="Adresse" data-container="body"><i class="material-icons">place</i></td>
+                    <td>{{site.adresse}}</td>
+                  </tr>
+                  <tr>
+                    <td class="text-right" data-toggle="tooltip" data-placement="top" title="Numéro de téléphone" data-container="body"><i class="material-icons">call</i></td>
+                    <td>{{site.tel}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
-       </div>
         <!-- Sites-end -->
       </div>
       <div class="panel-footer">
@@ -93,32 +93,32 @@
       <div class="panel-heading">
         <h3 class="panel-title">Contacts</h3>
       </div>
-      <div class="panel-body panel-fixed" >
+      <div class="panel-body panel-fixed">
         <!-- Contacts -->
         <div *ngFor="let contact of entreprise.sites[0].contacts">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">
               <span>{{contact.nom}} {{contact.prenom}}</span>
               <span class="text-primary pull-right">{{contact.poste}}</span>
             </h3>
-          </div>
-          <div class="panel-body text-primary">
-            <table class="table table-responsive table-hover table-borderless">
-              <tbody>
-                <tr>
-                  <td class="text-right" data-toggle="tooltip" data-placement="top" title="Adresse mail" data-container="body"><i class="material-icons">contact_mail</i></td>
-                  <td>{{contact.email}}</td>
-                </tr>
-                <tr>
-                  <td class="text-right" data-toggle="tooltip" data-placement="top" title="Numéro de téléphone" data-container="body"><i class="material-icons">contact_phone</i></td>
-                  <td>{{contact.tel}}</td>
-                </tr>
-              </tbody>
-            </table>
+            </div>
+            <div class="panel-body text-primary">
+              <table class="table table-responsive table-hover table-borderless">
+                <tbody>
+                  <tr>
+                    <td class="text-right" data-toggle="tooltip" data-placement="top" title="Adresse mail" data-container="body"><i class="material-icons">contact_mail</i></td>
+                    <td>{{contact.email}}</td>
+                  </tr>
+                  <tr>
+                    <td class="text-right" data-toggle="tooltip" data-placement="top" title="Numéro de téléphone" data-container="body"><i class="material-icons">contact_phone</i></td>
+                    <td>{{contact.tel}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
-</div>
         <!-- Contact-end -->
       </div>
       <div class="panel-footer">
@@ -162,74 +162,12 @@
             <div class="tab-pane active" id="tabStages">
               <div class="col-md-6" style="text-align: center;">
                 <!-- Radar -->
-                <div class="radarChart"></div>
-                <script>
-                  /* Radar chart design created by Nadieh Bremer - VisualCinnamon.com */
-
-                  //////////////////////////////////////////////////////////////
-                  //////////////////////// Set-Up //////////////////////////////
-                  //////////////////////////////////////////////////////////////
-
-                  var margin = {
-                      top: 60,
-                      right: 60,
-                      bottom: 60,
-                      left: 60
-                    },
-                    width = Math.min(270, window.innerWidth - 10) - margin.left - margin.right,
-                    height = Math.min(width, window.innerHeight - margin.top - margin.bottom - 20);
-
-                  //////////////////////////////////////////////////////////////
-                  ////////////////////////// Data //////////////////////////////
-                  //////////////////////////////////////////////////////////////
-
-                  var data = [
-                    [ //Entreprise
-                      {
-                        axis: "Salaire",
-                        value: 3.2
-                      },
-                      {
-                        axis: "Dirigeants",
-                        value: 3.8
-                      },
-                      {
-                        axis: "Structure et organisation",
-                        value: 4.4
-                      },
-                      {
-                        axis: "Intégration",
-                        value: 2.6
-                      },
-                      {
-                        axis: "Opportunités d'évolution",
-                        value: 2.0
-                      }
-                    ]
-                  ];
-                  //////////////////////////////////////////////////////////////
-                  //////////////////// Draw the Chart //////////////////////////
-                  //////////////////////////////////////////////////////////////
-
-                  var color = d3.scale.ordinal()
-                    .range(["#9c27b0"]);
-
-                  var radarChartOptions = {
-                    w: width,
-                    h: height,
-                    margin: margin,
-                    maxValue: 5,
-                    levels: 5,
-                    roundStrokes: true,
-                    color: color
-                  };
-                  //Call function to draw the Radar chart
-                  RadarChart(".radarChart", data, radarChartOptions);
-                </script>
-                <!-- Radar-end -->
-                <!-- Bars -->
-                <div class="">
-
+                <div style="display: block">
+                  <h1>{{doughnutChartData}}</h1>
+                  <canvas baseChart [data]="doughnutChartData" [labels]="doughnutChartLabels" [chartType]="doughnutChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+                </div>
+                <div>
+                  <canvas id="mybarChart" width="50%" height="50%"></canvas>
                 </div>
                 <!-- Bars-end -->
               </div>
@@ -265,56 +203,56 @@
                   <div class="tab-content panel panel-default">
                     <div id="st20_stage" class="tab-pane fade in panel-fixed-2">
                       <div *ngFor="let stage of stagesST20">
-                      <div class="panel panel-default">
-                        <ul class="nav">
-                          <li class="active">
-                            <a href="#" >
-                              <div class="label label-success  col-md-2">{{getNoteGenerale(stage)}}</div>
-                              <!-- TODO: show only capital first letter of lastname -->
-                              <i class="material-icons">account_circle</i> {{stage.etudiant_id.nom}} {{stage.etudiant_id.prenom}}</a>
-                          </li>
-                          <li>
-                            <a data-toggle="modal" [attr.data-target]="'#ModalStage'+stage._id">
+                        <div class="panel panel-default">
+                          <ul class="nav">
+                            <li class="active">
+                              <a href="#">
+                                <div class="label label-success  col-md-2">{{getNoteGenerale(stage)}}</div>
+                                <!-- TODO: show only capital first letter of lastname -->
+                                <i class="material-icons">account_circle</i> {{stage.etudiant_id.nom}} {{stage.etudiant_id.prenom}}</a>
+                            </li>
+                            <li>
+                              <a data-toggle="modal" [attr.data-target]="'#ModalStage'+stage._id">
                         {{stage.commentaire_recommendation}}</a>
-                          </li>
-                        </ul>
-                      </div>
+                            </li>
+                          </ul>
+                        </div>
                       </div>
                     </div>
                     <div id="st40_stage" class="tab-pane fade in active panel-fixed-2">
                       <div *ngFor="let stage of stagesST40">
-                      <div class="panel panel-default">
-                        <ul class="nav">
-                          <li class="active">
-                            <a href="#" >
-                              <div class="label label-success  col-md-2">{{getNoteGenerale(stage)}}</div>
-                              <!-- TODO: show only capital first letter of lastname -->
-                              <i class="material-icons">account_circle</i> {{stage.etudiant_id.nom}} {{stage.etudiant_id.prenom}}</a>
-                          </li>
-                          <li>
-                            <a data-toggle="modal" [attr.data-target]="'#ModalStage'+stage._id">
+                        <div class="panel panel-default">
+                          <ul class="nav">
+                            <li class="active">
+                              <a href="#">
+                                <div class="label label-success  col-md-2">{{getNoteGenerale(stage)}}</div>
+                                <!-- TODO: show only capital first letter of lastname -->
+                                <i class="material-icons">account_circle</i> {{stage.etudiant_id.nom}} {{stage.etudiant_id.prenom}}</a>
+                            </li>
+                            <li>
+                              <a data-toggle="modal" [attr.data-target]="'#ModalStage'+stage._id">
                         {{stage.commentaire_recommendation}}</a>
-                          </li>
-                        </ul>
-                      </div>
+                            </li>
+                          </ul>
+                        </div>
                       </div>
                     </div>
                     <div id="st50_stage" class="tab-pane fade in panel-fixed-2">
                       <div *ngFor="let stage of stagesST50">
-                      <div class="panel panel-default">
-                        <ul class="nav">
-                          <li class="active">
-                            <a href="#" >
-                              <div class="label label-success  col-md-2">{{getNoteGenerale(stage)}}</div>
-                              <!-- TODO: show only capital first letter of lastname -->
-                              <i class="material-icons">account_circle</i> {{stage.etudiant_id.nom}} {{stage.etudiant_id.prenom}}</a>
-                          </li>
-                          <li>
-                            <a data-toggle="modal" [attr.data-target]="'#ModalStage'+stage._id">
+                        <div class="panel panel-default">
+                          <ul class="nav">
+                            <li class="active">
+                              <a href="#">
+                                <div class="label label-success  col-md-2">{{getNoteGenerale(stage)}}</div>
+                                <!-- TODO: show only capital first letter of lastname -->
+                                <i class="material-icons">account_circle</i> {{stage.etudiant_id.nom}} {{stage.etudiant_id.prenom}}</a>
+                            </li>
+                            <li>
+                              <a data-toggle="modal" [attr.data-target]="'#ModalStage'+stage._id">
                         {{stage.commentaire_recommendation}}</a>
-                          </li>
-                        </ul>
-                      </div>
+                            </li>
+                          </ul>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -362,54 +300,54 @@
                     <div id="st20" class="tab-pane fade in panel-fixed-2">
                       <div *ngFor="let entretien of entretiensST20">
                         <div class="panel panel-default">
-                        <ul class="nav">
-                          <li class="active">
-                            <a href="#" >
-                              <div class="label label-success  col-md-2">{{getNoteGeneraleEntretien(entretien)}}</div>
-                              <!-- TODO: show only capital first letter of lastname -->
-                              <i class="material-icons">account_circle</i> {{entretien.etudiant_id.nom}} {{entretien.etudiant_id.prenom}}</a>
-                          </li>
-                          <li>
-                            <a data-toggle="modal" [attr.data-target]="'#ModalEntretien'+entretien._id">{{entretien.deroulement}}</a>
-                          </li>
-                        </ul>
-                      </div>
+                          <ul class="nav">
+                            <li class="active">
+                              <a href="#">
+                                <div class="label label-success  col-md-2">{{getNoteGeneraleEntretien(entretien)}}</div>
+                                <!-- TODO: show only capital first letter of lastname -->
+                                <i class="material-icons">account_circle</i> {{entretien.etudiant_id.nom}} {{entretien.etudiant_id.prenom}}</a>
+                            </li>
+                            <li>
+                              <a data-toggle="modal" [attr.data-target]="'#ModalEntretien'+entretien._id">{{entretien.deroulement}}</a>
+                            </li>
+                          </ul>
+                        </div>
                       </div>
                     </div>
                     <div id="st40" class="tab-pane fade in active panel-fixed-2">
                       <div *ngFor="let entretien of entretiensST40">
-                      <div class="panel panel-default">
-                        <ul class="nav">
-                          <li class="active">
-                            <a href="#" >
-                              <div class="label label-success  col-md-2">{{getNoteGeneraleEntretien(entretien)}}</div>
-                              <!-- TODO: show only capital first letter of lastname -->
-                              <i class="material-icons">account_circle</i> {{entretien.etudiant_id.nom}} {{entretien.etudiant_id.prenom}}</a>
-                          </li>
-                          <li>
-                            <a data-toggle="modal" [attr.data-target]="'#ModalEntretien'+entretien._id">
+                        <div class="panel panel-default">
+                          <ul class="nav">
+                            <li class="active">
+                              <a href="#">
+                                <div class="label label-success  col-md-2">{{getNoteGeneraleEntretien(entretien)}}</div>
+                                <!-- TODO: show only capital first letter of lastname -->
+                                <i class="material-icons">account_circle</i> {{entretien.etudiant_id.nom}} {{entretien.etudiant_id.prenom}}</a>
+                            </li>
+                            <li>
+                              <a data-toggle="modal" [attr.data-target]="'#ModalEntretien'+entretien._id">
                         {{entretien.deroulement}}</a>
-                          </li>
-                        </ul>
-                      </div>
+                            </li>
+                          </ul>
+                        </div>
                       </div>
                     </div>
                     <div id="st50" class="tab-pane fade in panel-fixed-2">
                       <div *ngFor="let entretien of entretiensST50">
-                      <div class="panel panel-default">
-                        <ul class="nav">
-                          <li class="active">
-                            <a href="#" >
-                              <div class="label label-success  col-md-2">{{getNoteGeneraleEntretien(entretien)}}</div>
-                              <!-- TODO: show only capital first letter of lastname -->
-                              <i class="material-icons">account_circle</i> {{entretien.etudiant_id.nom}} {{entretien.etudiant_id.prenom}}</a>
-                          </li>
-                          <li>
-                            <a data-toggle="modal" [attr.data-target]="'#ModalEntretien'+entretien._id">
+                        <div class="panel panel-default">
+                          <ul class="nav">
+                            <li class="active">
+                              <a href="#">
+                                <div class="label label-success  col-md-2">{{getNoteGeneraleEntretien(entretien)}}</div>
+                                <!-- TODO: show only capital first letter of lastname -->
+                                <i class="material-icons">account_circle</i> {{entretien.etudiant_id.nom}} {{entretien.etudiant_id.prenom}}</a>
+                            </li>
+                            <li>
+                              <a data-toggle="modal" [attr.data-target]="'#ModalEntretien'+entretien._id">
                         {{entretien.deroulement}}</a>
-                          </li>
-                        </ul>
-                      </div>
+                            </li>
+                          </ul>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -427,460 +365,460 @@
   <!-- Sart Modal -->
   <div *ngFor="let stage of stagesST20">
     <div class="modal fade" [id]="'ModalStage'+stage._id" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
             <i class="material-icons">clear</i>
           </button>
-          <h4 class="modal-title">Informations complémentaires sur le stage</h4>
-        </div>
-        <div class="modal-body">
-          <div class="col-sm-12" id="modal_top_part">
-            <div class="col-sm-5 text-center">
-              <div class="col-xs-12">
-                <img width="110" height="110" src="{{stage.etudiant_id.photo}}" alt="Circle Image" class="img-circle img-responsive center_it">
+            <h4 class="modal-title">Informations complémentaires sur le stage</h4>
+          </div>
+          <div class="modal-body">
+            <div class="col-sm-12" id="modal_top_part">
+              <div class="col-sm-5 text-center">
+                <div class="col-xs-12">
+                  <img width="110" height="110" src="{{stage.etudiant_id.photo}}" alt="Circle Image" class="img-circle img-responsive center_it">
+                </div>
+                <div class="col-xs-12 text-primary">
+                  <h5>{{stage.etudiant_id.nom}} {{stage.etudiant_id.prenom}}</h5>
+                  <label class="label label-info">{{stage.etudiant_id.branche}}</label>
+                  <label class="label label-success">{{stage.etudiant_id.filiere}}</label>
+                </div>
+                <table class="table table-responsive table-hover table-borderless">
+                  <thead>
+                    <tr>
+                      <th colspan="2" class="text-center">Appréciations du stage</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="text-right">
+                        <span class="text-primary">Note Générale</span>
+                      </td>
+                      <td class="text-left">
+                        <div class="label label-primary">{{getNoteGenerale(stage)}}</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="text-right">
+                        Dirigeants
+                      </td>
+                      <td class="text-left">
+                        <div class="badge">{{stage.dirigeants}}</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="text-right">
+                        Structure et organisation
+                      </td>
+                      <td class="text-left">
+                        <div class="badge">{{stage.structure_organisation}}</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="text-right">
+                        Integration
+                      </td>
+                      <td class="text-left">
+                        <div class="badge">{{stage.integration_cdt_travail}}</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="text-right">
+                        Rémunération
+                      </td>
+                      <td class="text-left">
+                        <div class="badge">{{stage.remuneration_aventages}}</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="text-right">
+                        Opportunités
+                      </td>
+                      <td class="text-left">
+                        <div class="badge">{{stage.opportunites_carriere}}</div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
-              <div class="col-xs-12 text-primary">
-                <h5>{{stage.etudiant_id.nom}} {{stage.etudiant_id.prenom}}</h5>
-                <label class="label label-info">{{stage.etudiant_id.branche}}</label>
-                <label class="label label-success">{{stage.etudiant_id.filiere}}</label>
-              </div>
-              <table class="table table-responsive table-hover table-borderless">
-                <thead>
+              <div class="col-sm-7">
+                <table class="table table-responsive table-hover table-borderless">
                   <tr>
-                    <th colspan="2" class="text-center">Appréciations du stage</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="text-right">
-                      <span class="text-primary">Note Générale</span>
-                    </td>
-                    <td class="text-left">
-                      <div class="label label-primary">{{getNoteGenerale(stage)}}</div>
+                    <td class="text-center text-primary" colspan="2">
+                      Stage {{stage.type_stage}}
                     </td>
                   </tr>
                   <tr>
                     <td class="text-right">
-                      Dirigeants
+                      Sujet
                     </td>
-                    <td class="text-left">
-                      <div class="badge">{{stage.dirigeants}}</div>
-                    </td>
+                    <td>{{stage.sujet}}</td>
                   </tr>
                   <tr>
                     <td class="text-right">
-                      Structure et organisation
+                      Sem.
                     </td>
-                    <td class="text-left">
-                      <div class="badge">{{stage.structure_organisation}}</div>
-                    </td>
+                    <td>{{stage.semestre}}</td>
                   </tr>
                   <tr>
                     <td class="text-right">
-                      Integration
+                      Tuteur
                     </td>
-                    <td class="text-left">
-                      <div class="badge">{{stage.integration_cdt_travail}}</div>
-                    </td>
+                    <td>{{stage.tuteur}}</td>
                   </tr>
                   <tr>
                     <td class="text-right">
-                      Rémunération
+                      Salaire
                     </td>
-                    <td class="text-left">
-                      <div class="badge">{{stage.remuneration_aventages}}</div>
+                    <td>{{stage.remuneration}} €</td>
+                  </tr>
+                  <tr>
+                    <td class="text-center text-primary" colspan="2">
+                      Commentaires & recommandations
                     </td>
                   </tr>
                   <tr>
-                    <td class="text-right">
-                      Opportunités
-                    </td>
-                    <td class="text-left">
-                      <div class="badge">{{stage.opportunites_carriere}}</div>
+                    <td colspan="2">{{stage.commentaire_recommendation}}</td>
+                  </tr>
+                  <tr>
+                    <td class="text-center text-primary" colspan="2">
+                      Documents
                     </td>
                   </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="col-sm-7">
-              <table class="table table-responsive table-hover table-borderless">
-                <tr>
-                  <td class="text-center text-primary" colspan="2">
-                    Stage {{stage.type_stage}}
-                  </td>
-                </tr>
-                <tr>
-                  <td class="text-right">
-                    Sujet
-                  </td>
-                  <td>{{stage.sujet}}</td>
-                </tr>
-                <tr>
-                  <td class="text-right">
-                    Sem.
-                  </td>
-                  <td>{{stage.semestre}}</td>
-                </tr>
-                <tr>
-                  <td class="text-right">
-                    Tuteur
-                  </td>
-                  <td>{{stage.tuteur}}</td>
-                </tr>
-                <tr>
-                  <td class="text-right">
-                    Salaire
-                  </td>
-                  <td>{{stage.remuneration}} €</td>
-                </tr>
-                <tr>
-                  <td class="text-center text-primary" colspan="2">
-                    Commentaires & recommandations
-                  </td>
-                </tr>
-                <tr>
-                  <td colspan="2">{{stage.commentaire_recommendation}}</td>
-                </tr>
-                <tr>
-                  <td class="text-center text-primary" colspan="2">
-                    Documents
-                  </td>
-                </tr>
-                <tr>
-                  <td colspan="2">
-                    <a [href]="stage.rapport">
+                  <tr>
+                    <td colspan="2">
+                      <a [href]="stage.rapport">
                     Rapport de stage
                     <i class="material-icons">insert_drive_file</i>
                     </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td colspan="2">
-                    <a [href]="stage.soutenance">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">
+                      <a [href]="stage.soutenance">
                     Soutenance de stage
                     <i class="material-icons">insert_drive_file</i>
                     </a>
-                  </td>
-                </tr>
-              </table>
+                    </td>
+                  </tr>
+                </table>
 
+              </div>
             </div>
           </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger btn-simple" data-dismiss="modal">Fermer</button>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger btn-simple" data-dismiss="modal">Fermer</button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
   </div>
   <!--  End Modal -->
   <!-- Sart Modal -->
   <div *ngFor="let stage of stagesST40">
     <div class="modal fade" [id]="'ModalStage'+stage._id" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
             <i class="material-icons">clear</i>
           </button>
-          <h4 class="modal-title">Informations complémentaires sur le stage</h4>
-        </div>
-        <div class="modal-body">
-          <div class="col-sm-12" id="modal_top_part">
-            <div class="col-sm-5 text-center">
-              <div class="col-xs-12">
-                <img width="110" height="110" src="{{stage.etudiant_id.photo}}" alt="Circle Image" class="img-circle img-responsive center_it">
+            <h4 class="modal-title">Informations complémentaires sur le stage</h4>
+          </div>
+          <div class="modal-body">
+            <div class="col-sm-12" id="modal_top_part">
+              <div class="col-sm-5 text-center">
+                <div class="col-xs-12">
+                  <img width="110" height="110" src="{{stage.etudiant_id.photo}}" alt="Circle Image" class="img-circle img-responsive center_it">
+                </div>
+                <div class="col-xs-12 text-primary">
+                  <h5>{{stage.etudiant_id.nom}} {{stage.etudiant_id.prenom}}</h5>
+                  <label class="label label-info">{{stage.etudiant_id.branche}}</label>
+                  <label class="label label-success">{{stage.etudiant_id.filiere}}</label>
+                </div>
+                <table class="table table-responsive table-hover table-borderless">
+                  <thead>
+                    <tr>
+                      <th colspan="2" class="text-center">Appréciations du stage</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="text-right">
+                        <span class="text-primary">Note Générale</span>
+                      </td>
+                      <td class="text-left">
+                        <div class="label label-primary">{{getNoteGenerale(stage)}}</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="text-right">
+                        Dirigeants
+                      </td>
+                      <td class="text-left">
+                        <div class="badge">{{stage.dirigeants}}</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="text-right">
+                        Structure et organisation
+                      </td>
+                      <td class="text-left">
+                        <div class="badge">{{stage.structure_organisation}}</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="text-right">
+                        Integration
+                      </td>
+                      <td class="text-left">
+                        <div class="badge">{{stage.integration_cdt_travail}}</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="text-right">
+                        Rémunération
+                      </td>
+                      <td class="text-left">
+                        <div class="badge">{{stage.remuneration_aventages}}</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="text-right">
+                        Opportunités
+                      </td>
+                      <td class="text-left">
+                        <div class="badge">{{stage.opportunites_carriere}}</div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
-              <div class="col-xs-12 text-primary">
-                <h5>{{stage.etudiant_id.nom}} {{stage.etudiant_id.prenom}}</h5>
-                <label class="label label-info">{{stage.etudiant_id.branche}}</label>
-                <label class="label label-success">{{stage.etudiant_id.filiere}}</label>
-              </div>
-              <table class="table table-responsive table-hover table-borderless">
-                <thead>
+              <div class="col-sm-7">
+                <table class="table table-responsive table-hover table-borderless">
                   <tr>
-                    <th colspan="2" class="text-center">Appréciations du stage</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="text-right">
-                      <span class="text-primary">Note Générale</span>
-                    </td>
-                    <td class="text-left">
-                      <div class="label label-primary">{{getNoteGenerale(stage)}}</div>
+                    <td class="text-center text-primary" colspan="2">
+                      Stage {{stage.type_stage}}
                     </td>
                   </tr>
                   <tr>
                     <td class="text-right">
-                      Dirigeants
+                      Sujet
                     </td>
-                    <td class="text-left">
-                      <div class="badge">{{stage.dirigeants}}</div>
-                    </td>
+                    <td>{{stage.sujet}}</td>
                   </tr>
                   <tr>
                     <td class="text-right">
-                      Structure et organisation
+                      Sem.
                     </td>
-                    <td class="text-left">
-                      <div class="badge">{{stage.structure_organisation}}</div>
-                    </td>
+                    <td>{{stage.semestre}}</td>
                   </tr>
                   <tr>
                     <td class="text-right">
-                      Integration
+                      Tuteur
                     </td>
-                    <td class="text-left">
-                      <div class="badge">{{stage.integration_cdt_travail}}</div>
-                    </td>
+                    <td>{{stage.tuteur}}</td>
                   </tr>
                   <tr>
                     <td class="text-right">
-                      Rémunération
+                      Salaire
                     </td>
-                    <td class="text-left">
-                      <div class="badge">{{stage.remuneration_aventages}}</div>
+                    <td>{{stage.remuneration}} €</td>
+                  </tr>
+                  <tr>
+                    <td class="text-center text-primary" colspan="2">
+                      Commentaires & recommandations
                     </td>
                   </tr>
                   <tr>
-                    <td class="text-right">
-                      Opportunités
-                    </td>
-                    <td class="text-left">
-                      <div class="badge">{{stage.opportunites_carriere}}</div>
+                    <td colspan="2">{{stage.commentaire_recommendation}}</td>
+                  </tr>
+                  <tr>
+                    <td class="text-center text-primary" colspan="2">
+                      Documents
                     </td>
                   </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="col-sm-7">
-              <table class="table table-responsive table-hover table-borderless">
-                <tr>
-                  <td class="text-center text-primary" colspan="2">
-                    Stage {{stage.type_stage}}
-                  </td>
-                </tr>
-                <tr>
-                  <td class="text-right">
-                    Sujet
-                  </td>
-                  <td>{{stage.sujet}}</td>
-                </tr>
-                <tr>
-                  <td class="text-right">
-                    Sem.
-                  </td>
-                  <td>{{stage.semestre}}</td>
-                </tr>
-                <tr>
-                  <td class="text-right">
-                    Tuteur
-                  </td>
-                  <td>{{stage.tuteur}}</td>
-                </tr>
-                <tr>
-                  <td class="text-right">
-                    Salaire
-                  </td>
-                  <td>{{stage.remuneration}} €</td>
-                </tr>
-                <tr>
-                  <td class="text-center text-primary" colspan="2">
-                    Commentaires & recommandations
-                  </td>
-                </tr>
-                <tr>
-                  <td colspan="2">{{stage.commentaire_recommendation}}</td>
-                </tr>
-                <tr>
-                  <td class="text-center text-primary" colspan="2">
-                    Documents
-                  </td>
-                </tr>
-                <tr>
-                  <td colspan="2">
-                    <a [href]="stage.rapport">
+                  <tr>
+                    <td colspan="2">
+                      <a [href]="stage.rapport">
                     Rapport de stage
                     <i class="material-icons">insert_drive_file</i>
                     </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td colspan="2">
-                    <a [href]="stage.soutenance">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">
+                      <a [href]="stage.soutenance">
                     Soutenance de stage
                     <i class="material-icons">insert_drive_file</i>
                     </a>
-                  </td>
-                </tr>
-              </table>
+                    </td>
+                  </tr>
+                </table>
 
+              </div>
             </div>
           </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger btn-simple" data-dismiss="modal">Fermer</button>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger btn-simple" data-dismiss="modal">Fermer</button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
   </div>
   <!--  End Modal -->
   <!-- Sart Modal -->
   <div *ngFor="let stage of stagesST50">
     <div class="modal fade" [id]="'ModalStage'+stage._id" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
             <i class="material-icons">clear</i>
           </button>
-          <h4 class="modal-title">Informations complémentaires sur le stage</h4>
-        </div>
-        <div class="modal-body">
-          <div class="col-sm-12" id="modal_top_part">
-            <div class="col-sm-5 text-center">
-              <div class="col-xs-12">
-                <img width="110" height="110" src="{{stage.etudiant_id.photo}}" alt="Circle Image" class="img-circle img-responsive center_it">
+            <h4 class="modal-title">Informations complémentaires sur le stage</h4>
+          </div>
+          <div class="modal-body">
+            <div class="col-sm-12" id="modal_top_part">
+              <div class="col-sm-5 text-center">
+                <div class="col-xs-12">
+                  <img width="110" height="110" src="{{stage.etudiant_id.photo}}" alt="Circle Image" class="img-circle img-responsive center_it">
+                </div>
+                <div class="col-xs-12 text-primary">
+                  <h5>{{stage.etudiant_id.nom}} {{stage.etudiant_id.prenom}}</h5>
+                  <label class="label label-info">{{stage.etudiant_id.branche}}</label>
+                  <label class="label label-success">{{stage.etudiant_id.filiere}}</label>
+                </div>
+                <table class="table table-responsive table-hover table-borderless">
+                  <thead>
+                    <tr>
+                      <th colspan="2" class="text-center">Appréciations du stage</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="text-right">
+                        <span class="text-primary">Note Générale</span>
+                      </td>
+                      <td class="text-left">
+                        <div class="label label-primary">{{getNoteGenerale(stage)}}</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="text-right">
+                        Dirigeants
+                      </td>
+                      <td class="text-left">
+                        <div class="badge">{{stage.dirigeants}}</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="text-right">
+                        Structure et organisation
+                      </td>
+                      <td class="text-left">
+                        <div class="badge">{{stage.structure_organisation}}</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="text-right">
+                        Integration
+                      </td>
+                      <td class="text-left">
+                        <div class="badge">{{stage.integration_cdt_travail}}</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="text-right">
+                        Rémunération
+                      </td>
+                      <td class="text-left">
+                        <div class="badge">{{stage.remuneration_aventages}}</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="text-right">
+                        Opportunités
+                      </td>
+                      <td class="text-left">
+                        <div class="badge">{{stage.opportunites_carriere}}</div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
-              <div class="col-xs-12 text-primary">
-                <h5>{{stage.etudiant_id.nom}} {{stage.etudiant_id.prenom}}</h5>
-                <label class="label label-info">{{stage.etudiant_id.branche}}</label>
-                <label class="label label-success">{{stage.etudiant_id.filiere}}</label>
-              </div>
-              <table class="table table-responsive table-hover table-borderless">
-                <thead>
+              <div class="col-sm-7">
+                <table class="table table-responsive table-hover table-borderless">
                   <tr>
-                    <th colspan="2" class="text-center">Appréciations du stage</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="text-right">
-                      <span class="text-primary">Note Générale</span>
-                    </td>
-                    <td class="text-left">
-                      <div class="label label-primary">{{getNoteGenerale(stage)}}</div>
+                    <td class="text-center text-primary" colspan="2">
+                      Stage {{stage.type_stage}}
                     </td>
                   </tr>
                   <tr>
                     <td class="text-right">
-                      Dirigeants
+                      Sujet
                     </td>
-                    <td class="text-left">
-                      <div class="badge">{{stage.dirigeants}}</div>
-                    </td>
+                    <td>{{stage.sujet}}</td>
                   </tr>
                   <tr>
                     <td class="text-right">
-                      Structure et organisation
+                      Sem.
                     </td>
-                    <td class="text-left">
-                      <div class="badge">{{stage.structure_organisation}}</div>
-                    </td>
+                    <td>{{stage.semestre}}</td>
                   </tr>
                   <tr>
                     <td class="text-right">
-                      Integration
+                      Tuteur
                     </td>
-                    <td class="text-left">
-                      <div class="badge">{{stage.integration_cdt_travail}}</div>
-                    </td>
+                    <td>{{stage.tuteur}}</td>
                   </tr>
                   <tr>
                     <td class="text-right">
-                      Rémunération
+                      Salaire
                     </td>
-                    <td class="text-left">
-                      <div class="badge">{{stage.remuneration_aventages}}</div>
+                    <td>{{stage.remuneration}} €</td>
+                  </tr>
+                  <tr>
+                    <td class="text-center text-primary" colspan="2">
+                      Commentaires & recommandations
                     </td>
                   </tr>
                   <tr>
-                    <td class="text-right">
-                      Opportunités
-                    </td>
-                    <td class="text-left">
-                      <div class="badge">{{stage.opportunites_carriere}}</div>
+                    <td colspan="2">{{stage.commentaire_recommendation}}</td>
+                  </tr>
+                  <tr>
+                    <td class="text-center text-primary" colspan="2">
+                      Documents
                     </td>
                   </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="col-sm-7">
-              <table class="table table-responsive table-hover table-borderless">
-                <tr>
-                  <td class="text-center text-primary" colspan="2">
-                    Stage {{stage.type_stage}}
-                  </td>
-                </tr>
-                <tr>
-                  <td class="text-right">
-                    Sujet
-                  </td>
-                  <td>{{stage.sujet}}</td>
-                </tr>
-                <tr>
-                  <td class="text-right">
-                    Sem.
-                  </td>
-                  <td>{{stage.semestre}}</td>
-                </tr>
-                <tr>
-                  <td class="text-right">
-                    Tuteur
-                  </td>
-                  <td>{{stage.tuteur}}</td>
-                </tr>
-                <tr>
-                  <td class="text-right">
-                    Salaire
-                  </td>
-                  <td>{{stage.remuneration}} €</td>
-                </tr>
-                <tr>
-                  <td class="text-center text-primary" colspan="2">
-                    Commentaires & recommandations
-                  </td>
-                </tr>
-                <tr>
-                  <td colspan="2">{{stage.commentaire_recommendation}}</td>
-                </tr>
-                <tr>
-                  <td class="text-center text-primary" colspan="2">
-                    Documents
-                  </td>
-                </tr>
-                <tr>
-                  <td colspan="2">
-                    <a [href]="stage.rapport">
+                  <tr>
+                    <td colspan="2">
+                      <a [href]="stage.rapport">
                     Rapport de stage
                     <i class="material-icons">insert_drive_file</i>
                     </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td colspan="2">
-                    <a [href]="stage.soutenance">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">
+                      <a [href]="stage.soutenance">
                     Soutenance de stage
                     <i class="material-icons">insert_drive_file</i>
                     </a>
-                  </td>
-                </tr>
-              </table>
+                    </td>
+                  </tr>
+                </table>
 
+              </div>
             </div>
           </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger btn-simple" data-dismiss="modal">Fermer</button>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger btn-simple" data-dismiss="modal">Fermer</button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
   </div>
   <!--  End Modal -->
 
@@ -888,124 +826,124 @@
   <div *ngFor="let entretien of entretiensST20">
     <div class="modal fade" [id]="'ModalEntretien'+entretien._id" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
             <i class="material-icons">clear</i>
           </button>
-          <h4 class="modal-title">Informations complémentaires sur l'entretien</h4>
-        </div>
-        <div class="modal-body">
-          <div class="col-sm-12" id="modal_top_part">
-            <div class="col-sm-5 text-center">
-              <div class="col-xs-12">
-                <img width="110" height="110" src="{{entretien.etudiant_id.photo}}" alt="Circle Image" class="img-circle img-responsive center_it">
+            <h4 class="modal-title">Informations complémentaires sur l'entretien</h4>
+          </div>
+          <div class="modal-body">
+            <div class="col-sm-12" id="modal_top_part">
+              <div class="col-sm-5 text-center">
+                <div class="col-xs-12">
+                  <img width="110" height="110" src="{{entretien.etudiant_id.photo}}" alt="Circle Image" class="img-circle img-responsive center_it">
+                </div>
+                <div class="col-xs-12 text-primary">
+                  <h5>{{entretien.etudiant_id.nom}} {{entretien.etudiant_id.nom}}</h5>
+                  <label class="label label-info">{{entretien.etudiant_id.branche}}</label>
+                  <label class="label label-success">{{entretien.etudiant_id.filiere}}</label>
+                </div>
+                <table class="table table-responsive table-hover table-borderless">
+                  <thead>
+                    <tr>
+                      <th colspan="2" class="text-center">Appréciations de l'entretien</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="text-right">
+                        <span class="text-primary">Note Générale</span>
+                      </td>
+                      <td class="text-left">
+                        <div class="label label-primary">{{getNoteGeneraleEntretien(entretien)}}</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="text-right">
+                        Difficulté
+                      </td>
+                      <td class="text-left">
+                        <div class="badge">{{entretien.difficultee}}</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="text-right">
+                        Expérience personnelle
+                      </td>
+                      <td class="text-left">
+                        <div class="badge">{{entretien.appreciation}}</div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
-              <div class="col-xs-12 text-primary">
-                <h5>{{entretien.etudiant_id.nom}} {{entretien.etudiant_id.nom}}</h5>
-                <label class="label label-info">{{entretien.etudiant_id.branche}}</label>
-                <label class="label label-success">{{entretien.etudiant_id.filiere}}</label>
-              </div>
-              <table class="table table-responsive table-hover table-borderless">
-                <thead>
+              <div class="col-sm-7">
+                <table class="table table-responsive table-hover table-borderless">
                   <tr>
-                    <th colspan="2" class="text-center">Appréciations de l'entretien</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="text-right">
-                      <span class="text-primary">Note Générale</span>
-                    </td>
-                    <td class="text-left">
-                      <div class="label label-primary">{{getNoteGeneraleEntretien(entretien)}}</div>
+                    <td class="text-center text-primary" colspan="2">
+                      Déroulement de l'entretien
                     </td>
                   </tr>
                   <tr>
-                    <td class="text-right">
-                      Difficulté
+                    <td colspan="2">{{entretien.deroulement}}</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2" class="text-center text-primary">Résultats</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Proposition de stage
                     </td>
-                    <td class="text-left">
-                      <div class="badge">{{entretien.difficultee}}</div>
+                    <td *ngIf="entretien.offre_de_stage.proposition" class="text-left text-success">
+                      <i class="material-icons">done</i>
+                    </td>
+                    <td *ngIf="!entretien.offre_de_stage.proposition" class="text-left text-danger">
+                      <i class="material-icons">clear</i>
                     </td>
                   </tr>
                   <tr>
-                    <td class="text-right">
-                      Expérience personnelle
+                    <td>
+                      Proposition acceptée
                     </td>
-                    <td class="text-left">
-                      <div class="badge">{{entretien.appreciation}}</div>
+                    <td *ngIf="entretien.offre_de_stage.acceptation" class="text-left text-success">
+                      <i class="material-icons">done</i>
+                    </td>
+                    <td *ngIf="!entretien.offre_de_stage.acceptation" class="text-left text-danger">
+                      <i class="material-icons">clear</i>
                     </td>
                   </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="col-sm-7">
-              <table class="table table-responsive table-hover table-borderless">
-                <tr>
-                  <td class="text-center text-primary" colspan="2">
-                    Déroulement de l'entretien
-                  </td>
-                </tr>
-                <tr>
-                  <td colspan="2">{{entretien.deroulement}}</td>
-                </tr>
-                <tr>
-                  <td colspan="2" class="text-center text-primary">Résultats</td>
-                </tr>
-                <tr>
-                  <td>
-                    Proposition de stage
-                  </td>
-                  <td *ngIf="entretien.offre_de_stage.proposition" class="text-left text-success">
-                    <i class="material-icons">done</i>
-                  </td>
-                  <td *ngIf="!entretien.offre_de_stage.proposition" class="text-left text-danger">
-                    <i class="material-icons">clear</i>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Proposition acceptée
-                  </td>
-                  <td *ngIf="entretien.offre_de_stage.acceptation" class="text-left text-success">
-                    <i class="material-icons">done</i>
-                  </td>
-                  <td *ngIf="!entretien.offre_de_stage.acceptation" class="text-left text-danger">
-                    <i class="material-icons">clear</i>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="text-center text-primary" colspan="2">
-                    Documents
-                  </td>
-                </tr>
-                <tr>
-                  <td colspan="2">
-                    <a href="{{entretien.cv}}">
+                  <tr>
+                    <td class="text-center text-primary" colspan="2">
+                      Documents
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">
+                      <a href="{{entretien.cv}}">
                     Curriculum Vitae
                     <i class="material-icons">insert_drive_file</i>
                     </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td colspan="2">
-                    <a href="{{entretien.lettre_motivation}}">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">
+                      <a href="{{entretien.lettre_motivation}}">
                     Lettre de motivation
                     <i class="material-icons">insert_drive_file</i>
                     </a>
-                  </td>
-                </tr>
-              </table>
+                    </td>
+                  </tr>
+                </table>
 
+              </div>
             </div>
           </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger btn-simple" data-dismiss="modal">Fermer</button>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger btn-simple" data-dismiss="modal">Fermer</button>
+          </div>
         </div>
       </div>
-    </div>
     </div>
   </div>
   <!--  End Modal -->
@@ -1013,124 +951,124 @@
   <div *ngFor="let entretien of entretiensST40">
     <div class="modal fade" [id]="'ModalEntretien'+entretien._id" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
             <i class="material-icons">clear</i>
           </button>
-          <h4 class="modal-title">Informations complémentaires sur l'entretien</h4>
-        </div>
-        <div class="modal-body">
-          <div class="col-sm-12" id="modal_top_part">
-            <div class="col-sm-5 text-center">
-              <div class="col-xs-12">
-                <img width="110" height="110" src="{{entretien.etudiant_id.photo}}" alt="Circle Image" class="img-circle img-responsive center_it">
+            <h4 class="modal-title">Informations complémentaires sur l'entretien</h4>
+          </div>
+          <div class="modal-body">
+            <div class="col-sm-12" id="modal_top_part">
+              <div class="col-sm-5 text-center">
+                <div class="col-xs-12">
+                  <img width="110" height="110" src="{{entretien.etudiant_id.photo}}" alt="Circle Image" class="img-circle img-responsive center_it">
+                </div>
+                <div class="col-xs-12 text-primary">
+                  <h5>{{entretien.etudiant_id.nom}} {{entretien.etudiant_id.nom}}</h5>
+                  <label class="label label-info">{{entretien.etudiant_id.branche}}</label>
+                  <label class="label label-success">{{entretien.etudiant_id.filiere}}</label>
+                </div>
+                <table class="table table-responsive table-hover table-borderless">
+                  <thead>
+                    <tr>
+                      <th colspan="2" class="text-center">Appréciations de l'entretien</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="text-right">
+                        <span class="text-primary">Note Générale</span>
+                      </td>
+                      <td class="text-left">
+                        <div class="label label-primary">{{getNoteGeneraleEntretien(entretien)}}</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="text-right">
+                        Difficulté
+                      </td>
+                      <td class="text-left">
+                        <div class="badge">{{entretien.difficultee}}</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="text-right">
+                        Expérience personnelle
+                      </td>
+                      <td class="text-left">
+                        <div class="badge">{{entretien.appreciation}}</div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
-              <div class="col-xs-12 text-primary">
-                <h5>{{entretien.etudiant_id.nom}} {{entretien.etudiant_id.nom}}</h5>
-                <label class="label label-info">{{entretien.etudiant_id.branche}}</label>
-                <label class="label label-success">{{entretien.etudiant_id.filiere}}</label>
-              </div>
-              <table class="table table-responsive table-hover table-borderless">
-                <thead>
+              <div class="col-sm-7">
+                <table class="table table-responsive table-hover table-borderless">
                   <tr>
-                    <th colspan="2" class="text-center">Appréciations de l'entretien</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="text-right">
-                      <span class="text-primary">Note Générale</span>
-                    </td>
-                    <td class="text-left">
-                      <div class="label label-primary">{{getNoteGeneraleEntretien(entretien)}}</div>
+                    <td class="text-center text-primary" colspan="2">
+                      Déroulement de l'entretien
                     </td>
                   </tr>
                   <tr>
-                    <td class="text-right">
-                      Difficulté
+                    <td colspan="2">{{entretien.deroulement}}</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2" class="text-center text-primary">Résultats</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Proposition de stage
                     </td>
-                    <td class="text-left">
-                      <div class="badge">{{entretien.difficultee}}</div>
+                    <td *ngIf="entretien.offre_de_stage.proposition" class="text-left text-success">
+                      <i class="material-icons">done</i>
+                    </td>
+                    <td *ngIf="!entretien.offre_de_stage.proposition" class="text-left text-danger">
+                      <i class="material-icons">clear</i>
                     </td>
                   </tr>
                   <tr>
-                    <td class="text-right">
-                      Expérience personnelle
+                    <td>
+                      Proposition acceptée
                     </td>
-                    <td class="text-left">
-                      <div class="badge">{{entretien.appreciation}}</div>
+                    <td *ngIf="entretien.offre_de_stage.acceptation" class="text-left text-success">
+                      <i class="material-icons">done</i>
+                    </td>
+                    <td *ngIf="!entretien.offre_de_stage.acceptation" class="text-left text-danger">
+                      <i class="material-icons">clear</i>
                     </td>
                   </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="col-sm-7">
-              <table class="table table-responsive table-hover table-borderless">
-                <tr>
-                  <td class="text-center text-primary" colspan="2">
-                    Déroulement de l'entretien
-                  </td>
-                </tr>
-                <tr>
-                  <td colspan="2">{{entretien.deroulement}}</td>
-                </tr>
-                <tr>
-                  <td colspan="2" class="text-center text-primary">Résultats</td>
-                </tr>
-                <tr>
-                  <td>
-                    Proposition de stage
-                  </td>
-                  <td *ngIf="entretien.offre_de_stage.proposition" class="text-left text-success">
-                    <i class="material-icons">done</i>
-                  </td>
-                  <td *ngIf="!entretien.offre_de_stage.proposition" class="text-left text-danger">
-                    <i class="material-icons">clear</i>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Proposition acceptée
-                  </td>
-                  <td *ngIf="entretien.offre_de_stage.acceptation" class="text-left text-success">
-                    <i class="material-icons">done</i>
-                  </td>
-                  <td *ngIf="!entretien.offre_de_stage.acceptation" class="text-left text-danger">
-                    <i class="material-icons">clear</i>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="text-center text-primary" colspan="2">
-                    Documents
-                  </td>
-                </tr>
-                <tr>
-                  <td colspan="2">
-                    <a href="{{entretien.cv}}">
+                  <tr>
+                    <td class="text-center text-primary" colspan="2">
+                      Documents
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">
+                      <a href="{{entretien.cv}}">
                     Curriculum Vitae
                     <i class="material-icons">insert_drive_file</i>
                     </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td colspan="2">
-                    <a href="{{entretien.lettre_motivation}}">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">
+                      <a href="{{entretien.lettre_motivation}}">
                     Lettre de motivation
                     <i class="material-icons">insert_drive_file</i>
                     </a>
-                  </td>
-                </tr>
-              </table>
+                    </td>
+                  </tr>
+                </table>
 
+              </div>
             </div>
           </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger btn-simple" data-dismiss="modal">Fermer</button>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger btn-simple" data-dismiss="modal">Fermer</button>
+          </div>
         </div>
       </div>
-    </div>
     </div>
   </div>
   <!--  End Modal -->
@@ -1138,124 +1076,124 @@
   <div *ngFor="let entretien of entretiensST50">
     <div class="modal fade" [id]="'ModalEntretien'+entretien._id" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
             <i class="material-icons">clear</i>
           </button>
-          <h4 class="modal-title">Informations complémentaires sur l'entretien</h4>
-        </div>
-        <div class="modal-body">
-          <div class="col-sm-12" id="modal_top_part">
-            <div class="col-sm-5 text-center">
-              <div class="col-xs-12">
-                <img width="110" height="110" src="{{entretien.etudiant_id.photo}}" alt="Circle Image" class="img-circle img-responsive center_it">
+            <h4 class="modal-title">Informations complémentaires sur l'entretien</h4>
+          </div>
+          <div class="modal-body">
+            <div class="col-sm-12" id="modal_top_part">
+              <div class="col-sm-5 text-center">
+                <div class="col-xs-12">
+                  <img width="110" height="110" src="{{entretien.etudiant_id.photo}}" alt="Circle Image" class="img-circle img-responsive center_it">
+                </div>
+                <div class="col-xs-12 text-primary">
+                  <h5>{{entretien.etudiant_id.nom}} {{entretien.etudiant_id.nom}}</h5>
+                  <label class="label label-info">{{entretien.etudiant_id.branche}}</label>
+                  <label class="label label-success">{{entretien.etudiant_id.filiere}}</label>
+                </div>
+                <table class="table table-responsive table-hover table-borderless">
+                  <thead>
+                    <tr>
+                      <th colspan="2" class="text-center">Appréciations de l'entretien</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="text-right">
+                        <span class="text-primary">Note Générale</span>
+                      </td>
+                      <td class="text-left">
+                        <div class="label label-primary">{{getNoteGeneraleEntretien(entretien)}}</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="text-right">
+                        Difficulté
+                      </td>
+                      <td class="text-left">
+                        <div class="badge">{{entretien.difficultee}}</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="text-right">
+                        Expérience personnelle
+                      </td>
+                      <td class="text-left">
+                        <div class="badge">{{entretien.appreciation}}</div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
-              <div class="col-xs-12 text-primary">
-                <h5>{{entretien.etudiant_id.nom}} {{entretien.etudiant_id.nom}}</h5>
-                <label class="label label-info">{{entretien.etudiant_id.branche}}</label>
-                <label class="label label-success">{{entretien.etudiant_id.filiere}}</label>
-              </div>
-              <table class="table table-responsive table-hover table-borderless">
-                <thead>
+              <div class="col-sm-7">
+                <table class="table table-responsive table-hover table-borderless">
                   <tr>
-                    <th colspan="2" class="text-center">Appréciations de l'entretien</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="text-right">
-                      <span class="text-primary">Note Générale</span>
-                    </td>
-                    <td class="text-left">
-                      <div class="label label-primary">{{getNoteGeneraleEntretien(entretien)}}</div>
+                    <td class="text-center text-primary" colspan="2">
+                      Déroulement de l'entretien
                     </td>
                   </tr>
                   <tr>
-                    <td class="text-right">
-                      Difficulté
+                    <td colspan="2">{{entretien.deroulement}}</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2" class="text-center text-primary">Résultats</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Proposition de stage
                     </td>
-                    <td class="text-left">
-                      <div class="badge">{{entretien.difficultee}}</div>
+                    <td *ngIf="entretien.offre_de_stage.proposition" class="text-left text-success">
+                      <i class="material-icons">done</i>
+                    </td>
+                    <td *ngIf="!entretien.offre_de_stage.proposition" class="text-left text-danger">
+                      <i class="material-icons">clear</i>
                     </td>
                   </tr>
                   <tr>
-                    <td class="text-right">
-                      Expérience personnelle
+                    <td>
+                      Proposition acceptée
                     </td>
-                    <td class="text-left">
-                      <div class="badge">{{entretien.appreciation}}</div>
+                    <td *ngIf="entretien.offre_de_stage.acceptation" class="text-left text-success">
+                      <i class="material-icons">done</i>
+                    </td>
+                    <td *ngIf="!entretien.offre_de_stage.acceptation" class="text-left text-danger">
+                      <i class="material-icons">clear</i>
                     </td>
                   </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="col-sm-7">
-              <table class="table table-responsive table-hover table-borderless">
-                <tr>
-                  <td class="text-center text-primary" colspan="2">
-                    Déroulement de l'entretien
-                  </td>
-                </tr>
-                <tr>
-                  <td colspan="2">{{entretien.deroulement}}</td>
-                </tr>
-                <tr>
-                  <td colspan="2" class="text-center text-primary">Résultats</td>
-                </tr>
-                <tr>
-                  <td>
-                    Proposition de stage
-                  </td>
-                  <td *ngIf="entretien.offre_de_stage.proposition" class="text-left text-success">
-                    <i class="material-icons">done</i>
-                  </td>
-                  <td *ngIf="!entretien.offre_de_stage.proposition" class="text-left text-danger">
-                    <i class="material-icons">clear</i>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Proposition acceptée
-                  </td>
-                  <td *ngIf="entretien.offre_de_stage.acceptation" class="text-left text-success">
-                    <i class="material-icons">done</i>
-                  </td>
-                  <td *ngIf="!entretien.offre_de_stage.acceptation" class="text-left text-danger">
-                    <i class="material-icons">clear</i>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="text-center text-primary" colspan="2">
-                    Documents
-                  </td>
-                </tr>
-                <tr>
-                  <td colspan="2">
-                    <a href="{{entretien.cv}}">
+                  <tr>
+                    <td class="text-center text-primary" colspan="2">
+                      Documents
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">
+                      <a href="{{entretien.cv}}">
                     Curriculum Vitae
                     <i class="material-icons">insert_drive_file</i>
                     </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td colspan="2">
-                    <a href="{{entretien.lettre_motivation}}">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">
+                      <a href="{{entretien.lettre_motivation}}">
                     Lettre de motivation
                     <i class="material-icons">insert_drive_file</i>
                     </a>
-                  </td>
-                </tr>
-              </table>
+                    </td>
+                  </tr>
+                </table>
 
+              </div>
             </div>
           </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger btn-simple" data-dismiss="modal">Fermer</button>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger btn-simple" data-dismiss="modal">Fermer</button>
+          </div>
         </div>
       </div>
-    </div>
     </div>
   </div>
   <!--  End Modal -->

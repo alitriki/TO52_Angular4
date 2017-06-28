@@ -1,151 +1,42 @@
+<!-- Entreprises-statistiques -->
 <div class="col-sm-5 col-xs-12">
-  <!-- Palmares -->
+  <!-- Entreprise -->
   <div class="col-xs-12">
     <div class="panel panel-primary">
       <div class="panel-heading">
-        <h3 class="panel-title">Palmarès</h3>
+        <h3 class="panel-title">Entreprise</h3>
       </div>
       <div class="panel-body">
-
-
-
-
-
-
-        <div class="card card-nav-tabs">
-          <div class="header header-success">
-            <!-- colors: "header-primary", "header-info", "header-success", "header-warning", "header-danger" -->
-            <div class="nav-tabs-navigation">
-              <div class="nav-tabs-wrapper">
-                <ul class="nav nav-tabs" data-tabs="tabs">
-                  <li class="active">
-                    <a href="#salaires" data-toggle="tab">
-                      <i class="material-icons">euro_symbol</i> SALAIRE
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#avis" data-toggle="tab">
-                      <i class="material-icons">star</i> AVIS
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#nbetudiants" data-toggle="tab">
-                      <i class="material-icons">people</i> ETUDIANTS
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
+        <div class="col-sm-6 col-xs-12 text-center">
+          <div class="col-xs-12">
+            <img width="110" height="110" [src]="entreprise.logo" alt="Circle Image" class="img-circle img-responsive center_it">
           </div>
-          <div class="content">
-            <div class="tab-content text-center">
-              <div class="tab-pane active" id="salaires">
-                <div class="radio col-xs-4">
-                  <label>
-                    <input type="radio" [(checked)]="salaire1" name="optionsRadios" (click)="getEntreprisesBySalaire('ST20')">
-                      ST20
-                   </label>
-                </div>
-                <div class="radio col-xs-4">
-                  <label>
-                    <input type="radio" [(checked)]="salaire2" name="optionsRadios" (click)="getEntreprisesBySalaire('ST40')">
-                      ST40
-                   </label>
-                </div>
-                <div class="radio col-xs-4">
-                  <label>
-                    <input type="radio" [(checked)]="salaire3" name="optionsRadios" (click)="getEntreprisesBySalaire('ST50')">
-                      ST50
-                   </label>
-                </div>
-                <br>
-              </div>
-              <div class="tab-pane" id="avis">
-                <div class="radio col-xs-4">
-                  <label>
-                    <input type="radio" [(checked)]="avis1" name="optionsRadios" (click)="getEntreprisesByAvis('ST20')">
-                      ST20
-                   </label>
-                </div>
-                <div class="radio col-xs-4">
-                  <label>
-                    <input type ="radio" [(checked)]="avis2" name="optionsRadios" (click)="getEntreprisesByAvis('ST40')">
-                      ST40
-                   </label>
-                </div>
-                <div class="radio col-xs-4">
-                  <label>
-                    <input type="radio" [(checked)]="avis3" name="optionsRadios" (click)="getEntreprisesByAvis('ST50')">
-                      ST50
-                   </label>
-                </div>
-                <br>
-              </div>
-              <div class="tab-pane" id="nbetudiants">
-                <div class="radio col-xs-4">
-                  <label>
-                    <input type="radio" [(checked)]="nbetudiants1" name="optionsRadios" (click)="getEntreprisesByStudentNb('ST20')">
-                      ST20
-                   </label>
-                </div>
-                <div class="radio col-xs-4">
-                  <label>
-                    <input type="radio" [(checked)]="nbetudiants2" name="optionsRadios" (click)="getEntreprisesByStudentNb('ST40')">
-                      ST40
-                   </label>
-                </div>
-                <div class="radio col-xs-4">
-                  <label>
-                    <input type="radio" [(checked)]="nbetudiants3" name="optionsRadios" (click)="getEntreprisesByStudentNb('ST50')">
-                      ST50
-                   </label>
-                </div>
-                <br>
-              </div>
-            </div>
+          <div class="col-xs-12 text-primary">
+            <h3>{{entreprise.nom}}</h3>
+            <label class="label label-info">{{entreprise.type}}</label>
           </div>
         </div>
-
-
-
-      </div>
-      <div class="panel-footer">
-
-      </div>
-    </div>
-  </div>
-  <!-- Palmares-end -->
-  <!-- Entreprises -->
-  <div class="col-xs-12">
-    <div class="panel panel-primary">
-      <div class="panel-heading">
-        <h3 class="panel-title">Entreprises</h3>
-      </div>
-      <div class="panel-body">
-        <div *ngFor="let entreprise of entreprises; let i=index">
-          <div class="panel panel-default ">
-            <div class="panel-body">
-              <a href="entreprise/{{entreprise._id}}">
-                <div class="col-md-8 col-xs-12">
-                  <table class="table table-responsive table-borderless">
-                    <tbody>
-                      <tr>
-                        <td style="max-width: 36px; min-width: 36px;">
-                          <img width="50" height="50" src="assets/img/profil.png" alt="Circle Image" class="img-circle img-responsive">
-                        </td>
-                        <td style="vertical-align: middle;">{{entreprise.nom}}</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </a>
-              <div class="col-md-4 col-xs-12 text-center">
-                <div type="button" name="button" class="btn btn-primary" (click)="chooseEntreprise(i)">
-                  Plus
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="col-sm-6 col-xs-12">
+          <table class="table table-responsive table-hover table-borderless">
+            <tbody>
+              <tr>
+                <td class="text-right" data-toggle="tooltip" data-placement="top" title="Domaine d'activité" data-container="body"><i class="material-icons">fingerprint</i></td>
+                <td>{{entreprise.domaine}}</td>
+              </tr>
+              <tr>
+                <td class="text-right" data-toggle="tooltip" data-placement="top" title="Site web" data-container="body"><i class="material-icons">home</i></td>
+                <td><a href="#">{{entreprise.site_web}}</a></td>
+              </tr>
+              <tr>
+                <td class="text-right" data-toggle="tooltip" data-placement="top" title="Nombre d'employés" data-container="body"><i class="material-icons">supervisor_account</i></td>
+                <td><b>{{entreprise.nb_employes}} </b>Employés</td>
+              </tr>
+              <tr>
+                <td class="text-right" data-toggle="tooltip" data-placement="top" title="Chiffre d'affaire" data-container="body"><i class="material-icons">euro_symbol</i></td>
+                <td><b>{{entreprise.chiffre_d_affaires}} </b>€</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
       <div class="panel-footer">
@@ -153,8 +44,89 @@
       </div>
     </div>
   </div>
-  <!-- Entreprises-end -->
+  <!-- Entreprise-end -->
+  <!-- Sites -->
+  <div class="col-xs-12">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">Sites</h3>
+      </div>
+      <div class="panel-body panel-fixed">
+        <!-- Sites -->
+        <!-- <div *ngFor="let site of entreprise.sites">
 
+
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">
+              <span class="text-muted">{{site.pays}} </span><span class="text-primary">{{site.ville}} </span><span>{{site.nom}} </span>
+              <span class="pull-right"><a href="#">Contacts</a></span>
+            </h3>
+            </div>
+            <div class="panel-body text-primary">
+              <table class="table table-responsive table-hover table-borderless">
+                <tbody>
+                  <tr>
+                    <td class="text-right" data-toggle="tooltip" data-placement="top" title="Adresse" data-container="body"><i class="material-icons">place</i></td>
+                    <td>{{site.adresse}}</td>
+                  </tr>
+                  <tr>
+                    <td class="text-right" data-toggle="tooltip" data-placement="top" title="Numéro de téléphone" data-container="body"><i class="material-icons">call</i></td>
+                    <td>{{site.tel}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div> -->
+        <!-- Sites-end -->
+      </div>
+      <div class="panel-footer">
+
+      </div>
+    </div>
+  </div>
+  <!-- Sites-end -->
+  <!-- Contacts -->
+  <div class="col-xs-12">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">Contacts</h3>
+      </div>
+      <div class="panel-body panel-fixed">
+        <!-- Contacts -->
+        <!-- <div *ngFor="let contact of entreprise.sites[0].contacts">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">
+              <span>{{contact.nom}} {{contact.prenom}}</span>
+              <span class="text-primary pull-right">{{contact.poste}}</span>
+            </h3>
+            </div>
+            <div class="panel-body text-primary">
+              <table class="table table-responsive table-hover table-borderless">
+                <tbody>
+                  <tr>
+                    <td class="text-right" data-toggle="tooltip" data-placement="top" title="Adresse mail" data-container="body"><i class="material-icons">contact_mail</i></td>
+                    <td>{{contact.email}}</td>
+                  </tr>
+                  <tr>
+                    <td class="text-right" data-toggle="tooltip" data-placement="top" title="Numéro de téléphone" data-container="body"><i class="material-icons">contact_phone</i></td>
+                    <td>{{contact.tel}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div> -->
+        <!-- Contact-end -->
+      </div>
+      <div class="panel-footer">
+
+      </div>
+    </div>
+  </div>
+  <!-- Contacts-end -->
 </div>
 <div class="col-sm-7 col-xs-12">
   <div class="panel panel-primary">
@@ -190,41 +162,21 @@
             <div class="tab-pane active" id="tabStages">
               <div class="col-md-6" style="text-align: center;">
                 <!-- Radar -->
-                <div class="col-md-12">
-
                 <div style="display: block">
                   <canvas baseChart
-                          [datasets]="radarChartStageData"
-                          [labels]="radarChartStageLabels"
-                          [options]="radarChartStageOptions"
-                          [chartType]="radarChartStageType"
+                          [datasets]="radarChartData"
+                          [labels]="radarChartLabels"
+                          [chartType]="radarChartType"
                           (chartHover)="chartHovered($event)"
-                          (chartClick)="chartClicked($event)" width="100%" height="100%"></canvas>
+                          (chartClick)="chartClicked($event)"></canvas>
                 </div>
-              </div>
-                <!-- End Radar -->
-                <div class="col-md-12">
-                  <div>
-                    <div style="display: block">
-                      <canvas baseChart
-                              [datasets]="barChartData1"
-                              [labels]="barChartLabels1"
-                              [options]="barChartOptions1"
-                              [legend]="barChartLegend1"
-                              [chartType]="barChartType1"
-                              (chartHover)="chartHovered($event)"
-                              (chartClick)="chartClicked($event)" width="50%" height="50%"></canvas>
-                    </div>
-
-                  </div>
-
-                </div>
+                <!-- Bars-end -->
               </div>
 
               <div class="col-md-6 col-xs-12" style="text-align: center; padding-top: 50px;">
-                <!-- <input id="input-3" name="input-3" class="rating rating-loading" value="3.5" data-show-clear="false" data-show-caption="false" data-readonly="true" data-size="sm"> -->
+                <input id="input-3" name="input-3" class="rating rating-loading" value="3.5" data-show-clear="false" data-show-caption="false" data-readonly="true" data-size="sm">
 
-                <ul class="nav nav-pills" role="tablist">
+                <ul class="nav nav-pills" role="tablist" style="padding-top: 20px;">
                   <li>
                     <a href="#st20_stage" role="tab" data-toggle="tab">ST20</a>
                   </li>
@@ -310,16 +262,12 @@
             </div>
             <div class="tab-pane" id="tabEntretiens">
               <div class="col-md-6 col-xs-12" style="text-align: center; padding-top: 40px;">
-                <!-- Radar -->
-                <div style="display: block">
-                  <canvas baseChart
-                          [datasets]="radarChartData"
-                          [labels]="radarChartLabels"
-                          [chartType]="radarChartType"
-                          (chartHover)="chartHovered($event)"
-                          (chartClick)="chartClicked($event)"></canvas>
+                <div>
+                  <canvas id="canvasDoughnut"></canvas>
                 </div>
-                <!-- End Radar -->
+                <div style="padding-top: 40px;">
+                  <canvas id="lineChart" width="50" height="50"></canvas>
+                </div>
               </div>
 
               <div class="col-md-6" style="text-align: center; padding-top: 50px;">
@@ -411,9 +359,9 @@
           </div>
         </div>
       </div>
-
     </div>
   </div>
+
 
   <!-- Sart Modal -->
   <div *ngFor="let stage of stagesST20">

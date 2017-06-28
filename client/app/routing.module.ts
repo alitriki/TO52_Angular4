@@ -20,6 +20,8 @@ import { EntretienEnregistrementComponent } from './entretien_enregistrement/ent
 import { AccueilComponent } from './accueil/accueil.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { TestComponent } from './test/test.component';
+
 
 const routes: Routes = [
   { path: '', component: AccueilComponent, canActivate: [AuthGuardLogin] },
@@ -29,6 +31,7 @@ const routes: Routes = [
   { path: 'logout', component: LogoutComponent },
   { path: 'account', component: AccountComponent, canActivate: [AuthGuardLogin] },
   { path: 'admin', component: AdminComponent, canActivate: [AuthGuardAdmin] },
+  { path: 'test', component: TestComponent, canActivate: [AuthGuardAdmin] },
 
   { path: 'entreprises_palmares', component: EntreprisesPalmaresComponent, canActivate: [AuthGuardLogin] },
   { path: 'entreprise/:id', component: EntreprisePageComponent, canActivate: [AuthGuardLogin] },

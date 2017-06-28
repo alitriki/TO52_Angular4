@@ -59,6 +59,10 @@ export default function setRoutes(app) {
   app.route('/api/entretiensST20/:entrepriseId').get(entretienCtrl.getEntretiensST20ByEntrepriseId);
   app.route('/api/entretiensST40/:entrepriseId').get(entretienCtrl.getEntretiensST40ByEntrepriseId);
   app.route('/api/entretiensST50/:entrepriseId').get(entretienCtrl.getEntretiensST50ByEntrepriseId);
+
+  app.route('/api/statsByEntreprise/:entrepriseId').get(stageCtrl.getStatsByEntreprise);
+
+
   app.route('/api/domaines').get(entrepriseCtrl.getDomaines);
   app.route('/api/entreprisesUnCritere').get(entrepriseCtrl.getEntreprisesUnCritere);
   app.route('/api/entreprisesUnCritere/:criteres').get(entrepriseCtrl.getEntreprisesUnCritere);
