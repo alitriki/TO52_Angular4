@@ -58,7 +58,7 @@ Run `ng lint` (frontend) and `npm run lintbe` (backend) to execute the linter vi
 To get more help on the `angular-cli` use `ng --help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
 ## Joined documents
-We joined to this repository the progress report and the presentation support in pdf and pptx.
+We joined to this repository the progress [report](https://github.com/alitriki/TO52_Angular4/blob/master/Rapport.pdf) and the presentation support in [pdf](https://github.com/alitriki/TO52_Angular4/blob/master/presentation.pdf) and [pptx](https://github.com/alitriki/TO52_Angular4/blob/master/presentation.pptx).
 
 ### Authors
 * [Ali Triki](https://github.com/alitriki)
