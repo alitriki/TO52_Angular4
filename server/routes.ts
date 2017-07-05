@@ -1,11 +1,9 @@
 import * as express from 'express';
 
-import CatCtrl from './controllers/cat';
 import EntrepriseCtrl from './controllers/entreprise';
 import StageCtrl from './controllers/stage';
 import EntretienCtrl from './controllers/entretien';
 import UserCtrl from './controllers/user';
-import Cat from './models/cat';
 import Entreprise from './models/entreprise';
 import Site from './models/site';
 import Stage from './models/stage';
@@ -14,19 +12,12 @@ import User from './models/user';
 
 export default function setRoutes(app) {
 
-  const catCtrl = new CatCtrl();
   const entrepriseCtrl = new EntrepriseCtrl();
   const stageCtrl = new StageCtrl();
   const entretienCtrl = new EntretienCtrl();
   const userCtrl = new UserCtrl();
 
-  // Cats
-  app.route('/api/cats').get(catCtrl.getAll);
-  app.route('/api/cats/count').get(catCtrl.count);
-  app.route('/api/cat').post(catCtrl.insert);
-  app.route('/api/cat/:id').get(catCtrl.get);
-  app.route('/api/cat/:id').put(catCtrl.update);
-  app.route('/api/cat/:id').delete(catCtrl.delete);
+
 
   // Users
   app.route('/api/login').post(userCtrl.login);

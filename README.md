@@ -42,7 +42,7 @@ A window will automatically open at [localhost:4200](http://localhost:4200) on y
 * you have a question
 
 ## To do
-* More tests
+* More functionalities
 
 ## Running unit tests
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
@@ -56,6 +56,9 @@ Run `ng lint` (frontend) and `npm run lintbe` (backend) to execute the linter vi
 
 ## Further help
 To get more help on the `angular-cli` use `ng --help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Joined documents
+We joined to this repository the progress report and the presentation support in pdf and pptx.
 
 ### Authors
 * [Ali Triki](https://github.com/alitriki)
